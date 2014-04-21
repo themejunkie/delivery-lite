@@ -1,0 +1,1 @@
+<?php // WordPress is Awesome! ?>
