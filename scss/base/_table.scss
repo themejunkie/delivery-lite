@@ -1,0 +1,29 @@
+table {
+	@include pxrem(font-size, $table-font-size);
+	max-width: 100%;
+	width: 100%;
+}
+
+table, 
+td {
+	@include pxrem(margin, $base-line-height 0);
+	@include pxrem(padding, 5px 10px);
+	border: 1px solid $table-border-color;
+}
+
+th {
+	@include pxrem(margin, 5px 0 10px);
+	@include pxrem(padding, 5px 10px);
+	background-color: $table-th-bg-color;
+	color: $table-font-color;
+	text-align: left;
+}
+
+tr {
+	background-color: $table-tr-bg-color;
+}
+
+table button, 
+table input { 
+	*overflow: auto;
+}

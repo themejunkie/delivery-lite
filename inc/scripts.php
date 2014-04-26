@@ -2,7 +2,7 @@
 /**
  * Enqueue scripts and styles for theme usage.
  *
- * @package    ThemeName
+ * @package    Delivery_Lite
  * @author     Theme Junkie
  * @copyright  Copyright (c) 2014, Theme Junkie
  * @license    http://www.gnu.org/licenses/gpl-2.0.html

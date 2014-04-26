@@ -4,7 +4,7 @@
  * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
  * If the identifier changes, it'll appear as if the options have been reset.
  *
- * @package    ThemeName
+ * @package    Delivery_Lite
  * @author     Theme Junkie
  * @copyright  Copyright (c) 2014, Theme Junkie
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,11 +14,11 @@
 function optionsframework_option_name() {
 
 	// This gets the theme name from the stylesheet
-	$themename = wp_get_theme();
-	$themename = preg_replace("/\W/", "_", strtolower( $themename ) );
+	$Delivery_Lite = wp_get_theme();
+	$Delivery_Lite = preg_replace("/\W/", "_", strtolower( $Delivery_Lite ) );
 
 	$optionsframework_settings = get_option( 'optionsframework' );
-	$optionsframework_settings['id'] = $themename;
+	$optionsframework_settings['id'] = $Delivery_Lite;
 	update_option( 'optionsframework', $optionsframework_settings );
 
 }

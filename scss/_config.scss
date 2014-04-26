@@ -1,0 +1,89 @@
+// Typography
+// ----------------------------------------------------------------------------------------------------------------
+
+// Compass like baseline
+$base-font-size:       16px;
+$base-line-height:     24px;
+$font-size:            $base-font-size !default;
+$browser-font-size:    16px !default;
+
+// Global 'bold' font-weight
+// some fonts only need to define with '700'
+$global-bold-weight:   700 !default;
+
+// Body type
+$body-font-family:     $arial !default;
+$body-font-weight:     400 !default;
+$body-font-style:      normal !default;
+
+// Heading type
+$heading-font-family:  $arial !default;
+$heading-font-weight:  700 !default;
+$heading-font-style:   normal !default;
+
+// Text element type
+$quote-font-family:    $georgia !default;
+$quote-font-style:     italic !default;
+
+// Table type
+$table-font-size:      12px !default;
+
+// Form type
+$form-font-size:       $base-font-size !default;
+$input-font-family:    $arial !default;
+$input-font-size:      13px !default;
+$btn-font-family:      $arial !default;
+$btn-font-size:        12px !default;
+$btn-font-weight:      $global-bold-weight !default;
+
+// Color
+// ----------------------------------------------------------------------------------------------------------------
+
+// Project base color
+$body-bg-color:        $white !default;
+$border-color:         $gray_light !default;
+$accent-1:             $black !default;
+$accent-2:             $black !default;
+
+// Selection color
+$selection-bg-color:   $black !default;
+$selection-font-color: $white !default;
+
+// Typography color
+$body-font-color:      $black-light !default;
+$heading-font-color:   $black-light !default;
+$del-font-color:       $gray_dark !default;
+$code-font-color:      #2080ad !default;
+$pre-bg-color:         #fafafa !default;
+$pre-font-color:       #2080ad !default;
+$pre-border-color:     #ededed !default;
+$quote-border-color:   $gray-lighter !default;
+$quote-font-color:     $gray-dark !default;
+$cite-font-color:      $black-lighter !default;
+
+// Link color
+$link-color:           $turquoise !default;
+$link-hover-color:     lighten($link-color, 10%) !default;
+$link-visited-color:   darken($link-color, 5%) !default;
+
+// Table color
+$table-border-color:   #e0e0e0 !default;
+$table-th-bg-color:    $white-darker !default;
+$table-tr-bg-color:    $white !default;
+$table-font-color:     $body-font-color !default;
+
+// Form Color
+$input-bg-color:       $white !default;
+$input-border-color:   #e0e0e0 !default;
+$input-font-color:     $body-font-color !default;
+$placeholder-color:    #888 !default;
+$btn-bg-color:         #f0f0f0 !default;
+$btn-border-color:     $input-border-color !default;
+$btn-font-color:       $body-font-color !default;
+
+// Misc
+// ----------------------------------------------------------------------------------------------------------------
+
+// Form
+$btn-border-radius:    0 !default;
+$input-border-radius:  0 !default;

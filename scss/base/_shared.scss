@@ -1,0 +1,23 @@
+.alignleft {
+	@include float(left);
+	margin-right: 1.5em;
+}
+
+.alignright {
+	@include float(right);
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	@extend %center-block;
+	clear: both;
+}
+
+.alignnone {
+    display: block;
+}
+
+.accessible-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}

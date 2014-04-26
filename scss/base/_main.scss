@@ -1,0 +1,38 @@
+*, 
+*:before, 
+*:after {
+	box-sizing: border-box;
+}
+
+* html {
+	font-size: 100% * ( $font-size / $browser-font-size ); 
+}
+
+html {
+	font-size: $font-size;
+	line-height: 1.5em;
+	min-height: 100%;
+}
+
+body {
+	background: $body-bg-color;
+	color: $body-font-color;
+	font-family: $body-font-family;
+	font-style: $body-font-style;
+	font-weight: $body-font-weight;
+}
+
+/**
+ * Selection Color.
+ */
+::selection { 
+	background: $selection-bg-color; 
+	color: $selection-font-color; 
+	text-shadow: none; 
+}
+
+::-moz-selection{ 
+	background: $selection-bg-color; 
+	color: $selection-font-color; 
+	text-shadow: none; 
+}
