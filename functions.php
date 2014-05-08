@@ -40,15 +40,9 @@ function delivery_theme_setup() {
 	// Register custom navigation menu.
 	register_nav_menus(
 		array(
-			'primary' => __( 'Primary Menu', 'delivery' ),
-			'social'  => __( 'Social Menu' , 'delivery' ),
+			'primary'   => __( 'Primary Menu', 'delivery' ),
+			'secondary' => __( 'Secondary Menu' , 'delivery' ),
 		)
-	);
-
-	// Enable support for Post Formats.
-	add_theme_support(
-		'post-formats',
-		array( 'audio', 'image', 'gallery', 'link', 'video' )
 	);
 
 	// Add custom stylesheet file to the TinyMCE visual editor.
@@ -100,6 +94,50 @@ function delivery_site_branding() {
 }
 
 /**
+ * Returns true if a blog has more than 1 category.
+ *
+ * @since  1.0.0
+ * @return bool
+ */
+function delivery_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'delivery_categories' ) ) ) {
+		// Create an array of all the categories that are attached to posts.
+		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids',
+			'hide_empty' => 1,
+
+			// We only need to know if there is more than one category.
+			'number'     => 2,
+		) );
+
+		// Count the number of categories that are attached to the posts.
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'delivery_categories', $all_the_cool_cats );
+	}
+
+	if ( $all_the_cool_cats > 1 ) {
+		// This blog has more than 1 category so delivery_categorized_blog should return true.
+		return true;
+	} else {
+		// This blog has only 1 category so delivery_categorized_blog should return false.
+		return false;
+	}
+}
+
+/**
+ * Flush out the transients used in delivery_categorized_blog.
+ *
+ * @since 1.0.0
+ */
+function delivery_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'delivery_categories' );
+}
+add_action( 'edit_category', 'delivery_category_transient_flusher' );
+add_action( 'save_post',     'delivery_category_transient_flusher' );
+
+/**
  * Sets up custom filters and actions for the theme.
  */
 require trailingslashit( get_template_directory() ) . 'inc/functions.php';
@@ -133,9 +171,3 @@ require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
  * We use some part of Hybrid Core to extends our themes.
  */
 require trailingslashit( get_template_directory() ) . 'inc/hybrid.php';
-
-/**
- * Load Options Framework core.
- */
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . 'admin/' );
-require trailingslashit( get_template_directory() ) . 'admin/options-framework.php';

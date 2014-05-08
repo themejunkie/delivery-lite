@@ -26,12 +26,6 @@ add_action( 'wp', 'delivery_setup_author' );
 // Generates the relevant template info.
 add_action( 'wp_head', 'delivery_meta_template', 10 );
 
-// Override the default options.php location.
-add_filter( 'options_framework_location', 'delivery_location_override' );
-
-// Change the theme option text.
-add_filter( 'optionsframework_menu', 'delivery_theme_options_text' );
-
 // Removes default styles set by WordPress recent comments widget.
 add_action( 'widgets_init', 'delivery_remove_recent_comments_style' );
 
@@ -142,28 +136,6 @@ function delivery_meta_template() {
 }
 
 /**
- * Override the default options.php location.
- *
- * @since  1.0.0
- */
-function delivery_location_override() {
-	return array( 'admin/options.php' );
-}
-
-/**
- * Change the theme options text.
- *
- * @since  1.0.0
- * @param  array $menu
- */
-function delivery_theme_options_text( $menu ) {
-	$menu['page_title'] = __( 'Theme Junkie Settings', 'delivery' );
-	$menu['menu_title'] = __( 'Theme Settings', 'delivery' );
-
-	return $menu;
-}
-
-/**
  * Removes default styles set by WordPress recent comments widget.
  *
  * @since 1.0.0
@@ -180,7 +152,13 @@ function delivery_remove_recent_comments_style() {
  * @param  $length
  */
 function delivery_excerpt_length( $length ) {
-	return 20;
+	
+	if ( is_archive() || is_search() ) {
+		return 40;
+	} else {
+		return 20;
+	}
+
 }
 
 /**

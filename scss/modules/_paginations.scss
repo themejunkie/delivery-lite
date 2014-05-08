@@ -5,10 +5,9 @@
 	text-align: center;
 
 	.page-numbers {
+		@extend %button;
 		@include pxrem(padding, 7px 12px);
 		@include pxrem(margin-left, -4px);
-		background: #fbfbfb;
-		background: linear-gradient(top, #fbfbfb, #eee);
 		display: inline-block;
 		border-top: 1px solid $border-color;
 		border-bottom: 1px solid $gray-light;
@@ -27,4 +26,14 @@
 		background: $white;
 	}
 
+}
+
+.loop-nav {
+	@include pxrem(margin-bottom, 30px);
+	@include font-size(12);
+	color: $gray-darker;
+
+	.prev {
+		@include pxrem(margin-bottom, 5px);
+	}
 }

@@ -31,10 +31,13 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
+				wp_list_comments(
+					array(
+						'style'       => 'ol',
+						'avatar_size' => 48,
+						'short_ping'  => true,
+					)
+				);
 			?>
 		</ol><!-- .comment-list -->
 
@@ -55,6 +58,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'delivery' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form( array( 'comment_notes_after' => false ) ); ?>
 
 </div><!-- #comments -->

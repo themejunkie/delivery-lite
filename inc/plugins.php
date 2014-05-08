@@ -29,12 +29,6 @@ function delivery_register_plugins() {
 		),
 
 		array(
-			'name'     => 'Theme Junkie Portfolio Content',
-			'slug'     => 'theme-junkie-portfolio-content',
-			'required' => false,
-		),
-
-		array(
 			'name'     => 'Jetpack by WordPress.com',
 			'slug'     => 'jetpack',
 			'required' => false,

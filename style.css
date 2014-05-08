@@ -308,7 +308,7 @@ html {
 
 body {
   background: white;
-  color: #777777;
+  color: #555555;
   font-family: "Droid Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -690,17 +690,14 @@ input[type="submit"],
 input[type="button"] {
   font-size: 12px;
   font-size: 0.92308rem;
-  padding: 3px 10px;
-  padding: 0.23077rem 0.76923rem;
+  padding: 10px 20px;
+  padding: 0.76923rem 1.53846rem;
   -webkit-appearance: none;
   background-clip: padding-box;
   border-radius: 0;
-  -webkit-transition: all 200ms ease-in-out 0s;
-  transition: all 200ms ease-in-out 0s;
-  background-color: #f0f0f0;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e9e9e9;
   cursor: pointer;
-  color: #777777;
+  color: #555555;
   display: inline-block;
   font-family: "Droid Sans", sans-serif;
   font-weight: 700;
@@ -716,7 +713,8 @@ a.button:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-  background-color: #fdfdfd;
+  background: white;
+  color: #2aa4cf;
   text-decoration: none;
 }
 button::-moz-focus-inner,
@@ -753,8 +751,8 @@ input[type="week"] {
   border-radius: 0;
   -webkit-appearance: none;
   background-color: white;
-  border: 1px solid #e0e0e0;
-  color: #777777;
+  border: 1px solid #e9e9e9;
+  color: #555555;
   font-family: "Droid Sans", sans-serif;
   outline: 0;
   margin: 0;
@@ -873,7 +871,7 @@ textarea {
 }
 
 optgroup {
-  color: #777777;
+  color: #555555;
   font-style: normal;
   font-weight: normal;
   font-family: "Droid Sans", sans-serif;
@@ -899,7 +897,7 @@ td {
   margin: 1.53846rem 0;
   padding: 5px 10px;
   padding: 0.38462rem 0.76923rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e9e9e9;
 }
 
 th {
@@ -908,7 +906,7 @@ th {
   padding: 5px 10px;
   padding: 0.38462rem 0.76923rem;
   background-color: #f0f0f0;
-  color: #777777;
+  color: #555555;
   text-align: left;
 }
 
@@ -1036,7 +1034,7 @@ object {
   float: left;
   margin-right: 1.69492%;
 }
-.menu-primary-items .sfHover, .menu-primary-items a:hover, .menu-primary-items a:visited:hover, .menu-primary-items .sub-menu a {
+.menu-primary-items .sfHover, .menu-primary-items .sub-menu a {
   background-color: #2aa4cf;
 }
 .menu-primary-items a {
@@ -1049,10 +1047,68 @@ object {
   text-transform: uppercase;
 }
 .menu-primary-items a:hover, .menu-primary-items a:visited:hover {
+  background-color: #2aa4cf;
   color: white;
 }
 .menu-primary-items .sub-menu a:hover {
   background-color: #50b7dc;
+}
+
+/**
+ * Secondary navigation
+ */
+.secondary-navigation {
+  position: relative;
+  margin-bottom: -1px;
+  z-index: 9;
+}
+
+.menu-secondary-items {
+  border: 1px solid #e9e9e9;
+  border-bottom-color: #dddddd;
+}
+.menu-secondary-items .sfHover, .menu-secondary-items .menu-primary-items .sub-menu a, .menu-primary-items .sub-menu .menu-secondary-items a {
+  background: #f0f0f0;
+  color: #666;
+}
+.menu-secondary-items a {
+  font-size: 13px;
+  font-size: 1rem;
+  padding: 12px 18px;
+  padding: 0.92308rem 1.38462rem;
+  border-right: 1px solid #e3e3e3;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.menu-secondary-items a:hover, .menu-secondary-items a:visited:hover {
+  background: #f0f0f0;
+  color: #666;
+}
+.menu-secondary-items.sf-arrows .sf-with-ul:after {
+  border-top-color: #dddddd;
+}
+.menu-secondary-items.sf-arrows ul .sf-with-ul:after {
+  border-top-color: transparent;
+  border-left-color: #dddddd;
+}
+.menu-secondary-items .sub-menu {
+  border-bottom: 1px solid #dddddd;
+  margin-left: -1px;
+}
+.menu-secondary-items .sub-menu a {
+  font-size: 13px;
+  font-size: 1rem;
+  background: #f0f0f0;
+  color: #666;
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  padding: 10px 18px;
+  text-transform: none;
+}
+.menu-secondary-items .sub-menu a:hover {
+  background: #fff298;
+  text-shadow: none;
 }
 
 /**
@@ -1103,6 +1159,10 @@ object {
   padding-bottom: 2.30769rem;
   border-bottom: 1px solid #e9e9e9;
 }
+.hentry .edit-link {
+  display: block;
+  clear: both;
+}
 
 .entry-title {
   font-size: 20px;
@@ -1110,7 +1170,7 @@ object {
   line-height: 1;
   font-weight: normal;
 }
-.single .entry-title {
+.single .entry-title, .page .entry-title {
   font-size: 26px;
   font-size: 2rem;
   line-height: 1.2;
@@ -1123,13 +1183,17 @@ object {
 }
 
 .thumb-link {
-  margin-right: 15px;
-  margin-right: 1.15385rem;
+  margin: 15px 15px 0 0;
+  margin: 1.15385rem 1.15385rem 0 0;
   display: inline;
   float: left;
 }
 .thumb-link img {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.entry-header-index {
+  overflow: hidden;
 }
 
 .entry-meta {
@@ -1142,15 +1206,36 @@ object {
 .entry-meta .published {
   color: #999999;
 }
+.entry-meta .comments-link {
+  float: right;
+}
+.entry-meta .comments-link a {
+  color: #999999;
+}
+.entry-meta .comments-link .dashicons {
+  color: #50b7dc;
+}
 
 .entry-summary {
   overflow: hidden;
 }
 
-.entry-content {
-  font-size: 14px;
-  font-size: 1.07692rem;
-  line-height: 1.5;
+.entry-footer {
+  font-size: 12px;
+  font-size: 0.92308rem;
+  color: #999999;
+}
+
+/**
+ * 404 page
+ */
+.not-found h2 {
+  font-size: 16px;
+  font-size: 1.23077rem;
+}
+.not-found div {
+  margin-bottom: 40px;
+  margin-bottom: 3.07692rem;
 }
 
 /*------------------------------------*\
@@ -1278,6 +1363,112 @@ object {
 /*------------------------------------*\
 	$COMMENTS
 \*------------------------------------*/
+/**
+ * Comment Form
+ */
+.comment-reply-title {
+  margin-bottom: 0;
+}
+
+.comment-form p {
+  margin-bottom: 10px;
+  margin-bottom: 0.76923rem;
+  line-height: 2.3;
+}
+.comment-form p.form-allowed-tags {
+  margin-bottom: 20px;
+  margin-bottom: 1.53846rem;
+  line-height: 1.5;
+}
+.comment-form label {
+  color: #999999;
+}
+.comment-form input {
+  margin-right: 15px;
+  margin-right: 1.15385rem;
+  float: left;
+  background-color: #f4f4f7;
+}
+.comment-form input:focus {
+  background-color: white;
+}
+.comment-form textarea {
+  background-color: #f4f4f7;
+  line-height: 1.5;
+}
+.comment-form textarea:focus {
+  background-color: white;
+}
+.comment-form .required {
+  color: #f00;
+}
+
+/**
+ * Comment List
+ */
+.comments-title {
+  margin-bottom: 20px;
+  margin-bottom: 1.53846rem;
+  padding-bottom: 14px;
+  padding-bottom: 1.07692rem;
+  font-size: 16px;
+  font-size: 1.23077rem;
+  line-height: 1.25;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.comment-list .children {
+  padding-left: 50px;
+  padding-left: 3.84615rem;
+  list-style: none;
+}
+
+.comment .avatar {
+  margin-right: 15px;
+  margin-right: 1.15385rem;
+  float: left;
+}
+.comment .edit-link a {
+  color: #2aa4cf;
+}
+.comment .reply {
+  font-size: 12px;
+  font-size: 0.92308rem;
+  float: right;
+  font-style: italic;
+  text-decoration: underline;
+}
+.comment .reply a {
+  color: #999999;
+}
+
+.comment-body {
+  padding-bottom: 20px;
+  padding-bottom: 1.53846rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.84615rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.comment-metadata {
+  margin-bottom: 15px;
+  margin-bottom: 1.15385rem;
+}
+.comment-metadata a {
+  color: #999999;
+}
+.comment-metadata a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.comment-content {
+  margin-bottom: 20px;
+  margin-bottom: 1.53846rem;
+  padding-left: 63px;
+  padding-left: 4.84615rem;
+}
+
 /*------------------------------------*\
 	$PAGINATIONS
 \*------------------------------------*/
@@ -1293,9 +1484,6 @@ object {
   padding: 0.53846rem 0.92308rem;
   margin-left: -4px;
   margin-left: -0.30769rem;
-  background: #fbfbfb;
-  background: -webkit-linear-gradient(top, #fbfbfb, #eeeeee);
-  background: linear-gradient(top, #fbfbfb, #eeeeee);
   display: inline-block;
   border-top: 1px solid #e9e9e9;
   border-bottom: 1px solid #dddddd;
@@ -1311,6 +1499,18 @@ object {
 }
 .pagination .current {
   background: white;
+}
+
+.loop-nav {
+  margin-bottom: 30px;
+  margin-bottom: 2.30769rem;
+  font-size: 12px;
+  font-size: 0.92308rem;
+  color: #999999;
+}
+.loop-nav .prev {
+  margin-bottom: 5px;
+  margin-bottom: 0.38462rem;
 }
 
 /*------------------------------------*\
@@ -1372,7 +1572,7 @@ object {
 .sf-arrows > li > .sf-with-ul:focus:after, .sf-arrows > li:hover > .sf-with-ul:after {
   border-top-color: white;
 }
-.sf-arrows > .sfHover > .sf-with-ul:after, .menu-primary-items .sf-arrows > a:hover > .sf-with-ul:after, .menu-primary-items .sub-menu .sf-arrows > a > .sf-with-ul:after {
+.sf-arrows > .sfHover > .sf-with-ul:after, .menu-primary-items .sub-menu .sf-arrows > a > .sf-with-ul:after {
   border-top-color: white;
 }
 .sf-arrows .sf-with-ul {
@@ -1400,7 +1600,7 @@ object {
 .sf-arrows ul li > .sf-with-ul:focus:after, .sf-arrows ul li:hover > .sf-with-ul:after {
   border-left-color: white;
 }
-.sf-arrows ul .sfHover > .sf-with-ul:after, .sf-arrows ul .menu-primary-items a:hover > .sf-with-ul:after, .menu-primary-items .sf-arrows ul a:hover > .sf-with-ul:after, .sf-arrows ul .menu-primary-items .sub-menu a > .sf-with-ul:after, .menu-primary-items .sub-menu .sf-arrows ul a > .sf-with-ul:after {
+.sf-arrows ul .sfHover > .sf-with-ul:after, .sf-arrows ul .menu-primary-items .sub-menu a > .sf-with-ul:after, .menu-primary-items .sub-menu .sf-arrows ul a > .sf-with-ul:after {
   border-left-color: white;
 }
 
@@ -1414,18 +1614,18 @@ object {
 /*------------------------------------*\
 	$GLOBAL
 \*------------------------------------*/
-.main-navigation, .widget-footer {
+.main-navigation, .menu-secondary-items, .entry-meta, .widget-footer, .comment-form p, .comment-body {
   *zoom: 1;
 }
-.main-navigation:before, .widget-footer:before, .main-navigation:after, .widget-footer:after {
+.main-navigation:before, .menu-secondary-items:before, .entry-meta:before, .widget-footer:before, .comment-form p:before, .comment-body:before, .main-navigation:after, .menu-secondary-items:after, .entry-meta:after, .widget-footer:after, .comment-form p:after, .comment-body:after {
   content: "";
   display: table;
 }
-.main-navigation:after, .widget-footer:after {
+.main-navigation:after, .menu-secondary-items:after, .entry-meta:after, .widget-footer:after, .comment-form p:after, .comment-body:after {
   clear: both;
 }
 
-.widget-area ul {
+.widget-area ul, .comment-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1435,4 +1635,15 @@ object {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+button,
+a.button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"], .menu-secondary-items, .pagination .page-numbers {
+  background: #fbfbfb;
+  background: -webkit-linear-gradient(top, #fbfbfb, #eeeeee);
+  background: linear-gradient(to bottom, #fbfbfb, #eeeeee);
+  text-shadow: 0 1px 0 white;
 }

@@ -1,0 +1,110 @@
+/**
+ * Comment Form
+ */
+.comment-reply-title {
+	margin-bottom: 0;
+}
+
+.comment-form {
+
+	p {
+		@extend %clearfix;
+		@include pxrem(margin-bottom, 10px);
+		line-height: 2.3;
+		&.form-allowed-tags {
+			@include pxrem(margin-bottom, 20px);
+			line-height: 1.5;
+		}
+	}
+
+	label {
+		color: $gray-darker;
+	}
+
+	input {
+		@include pxrem(margin-right, 15px);
+		float: left;
+		background-color: #f4f4f7;
+		&:focus {
+			background-color: $white;
+		}
+	}
+
+	textarea {
+		background-color: #f4f4f7;
+		line-height: 1.5;
+		&:focus {
+			background-color: $white;
+		}
+	}
+
+	.required {
+		color: #f00;
+	}
+
+}
+
+/**
+ * Comment List
+ */
+.comments-title {
+	@include pxrem(margin-bottom, 20px);
+	@include pxrem(padding-bottom, 14px);
+	@include font-size(16, true);
+	border-bottom: 1px solid $border-color;
+}
+
+.comment-list {
+	@extend %reset-list;
+
+	.children {
+		@include pxrem(padding-left, 50px);
+		list-style: none;
+	}
+}
+
+.comment {
+
+	.avatar {
+		@include pxrem(margin-right, 15px);
+		float: left;
+	}
+
+	.edit-link a {
+		color: $link-color;
+	}
+
+	.reply {
+		@include font-size(12);
+		float: right;
+		font-style: italic;
+		text-decoration: underline;
+		a {
+			color: $gray-darker;
+		}
+	}
+
+}
+
+.comment-body {
+	@extend %clearfix;
+	@include pxrem(padding-bottom, 20px);
+	@include pxrem(margin-bottom, 24px);
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.comment-metadata {
+	@include pxrem(margin-bottom, 15px);
+	a {
+		color: $gray-darker;
+		&:hover {
+			color: #333;
+			text-decoration: underline;
+		}
+	}
+}
+
+.comment-content {
+	@include pxrem(margin-bottom, 20px);
+	@include pxrem(padding-left, 63px);
+}

@@ -28,10 +28,8 @@
 		</div><!-- .header-item -->
 	</header><!-- #masthead -->
 
+	<?php get_template_part( 'menu', 'secondary' ); // Loads the menu-secondary.php template. ?>
+
 	<div id="content" class="site-content">
 
-		<?php
-			// Loads the sidebar-home.php template.
-			// It only displayed on home page.
-			get_sidebar( 'home' );
-		?>
+		<?php get_sidebar( 'home' ); // Loads the sidebar-home.php template. ?>

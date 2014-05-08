@@ -35,13 +35,12 @@ a.button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
+	@extend %button;
 	@include pxrem(font-size, $btn-font-size);
-	@include pxrem(padding, 3px 10px);
+	@include pxrem(padding, 10px 20px);
 	-webkit-appearance: none;
 	background-clip: padding-box;
 	border-radius: $btn-border-radius;
-	transition: all 200ms ease-in-out 0s;
-	background-color: $btn-bg-color;
 	border: 1px solid $btn-border-color;
 	cursor: pointer;
 	color: $btn-font-color;
@@ -56,7 +55,8 @@ input[type="button"] {
 	width: auto;
 
 	&:hover {
-		background-color: lighten($btn-bg-color, 5%);
+		background: $white;
+		color: $link-color;
 		text-decoration: none;
 	}
 

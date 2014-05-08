@@ -64,7 +64,7 @@ $selection-bg-color:   $black !default;
 $selection-font-color: $white !default;
 
 // Typography color
-$body-font-color:      #777 !default;
+$body-font-color:      $black-lighter !default;
 $heading-font-color:   #474747 !default;
 $del-font-color:       $gray_dark !default;
 $code-font-color:      #2080ad !default;
@@ -81,17 +81,16 @@ $link-hover-color:     lighten($link-color, 10%) !default;
 $link-visited-color:   darken($link-color, 5%) !default;
 
 // Table color
-$table-border-color:   #e0e0e0 !default;
+$table-border-color:   $border-color !default;
 $table-th-bg-color:    $white-darker !default;
 $table-tr-bg-color:    $white !default;
 $table-font-color:     $body-font-color !default;
 
 // Form Color
 $input-bg-color:       $white !default;
-$input-border-color:   #e0e0e0 !default;
+$input-border-color:   $border-color !default;
 $input-font-color:     $body-font-color !default;
 $placeholder-color:    #888 !default;
-$btn-bg-color:         #f0f0f0 !default;
 $btn-border-color:     $input-border-color !default;
 $btn-font-color:       $body-font-color !default;
 

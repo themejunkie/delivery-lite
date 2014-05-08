@@ -64,3 +64,11 @@
 	white-space: nowrap;
 	overflow: hidden;
 }
+
+// Button
+// ------------------------------------
+%button {
+	background: #fbfbfb;
+	background: linear-gradient(to bottom, #fbfbfb, $gray-lighter);
+	text-shadow: 0 1px 0 $white;
+}

@@ -6,13 +6,11 @@
 			<section class="error-404 not-found">
 
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'delivery' ); ?></h1>
+					<h2 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'delivery' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'delivery' ); ?></p>
-
-					<?php get_search_form(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
@@ -47,4 +45,5 @@
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

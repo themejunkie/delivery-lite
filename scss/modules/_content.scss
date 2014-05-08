@@ -22,13 +22,19 @@
 	@include pxrem(margin-bottom, 30px);
 	@include pxrem(padding-bottom, 30px);
 	border-bottom: 1px solid $border-color;
+
+	.edit-link {
+		display: block;
+		clear: both;
+	}
 }
 
 .entry-title {
 	@include font-size(20, true);
 	font-weight: normal;
 
-	.single & {
+	.single &,
+	.page & {
 		@include font-size(26);
 		line-height: 1.2;
 	}
@@ -43,7 +49,7 @@
 }
 
 .thumb-link {
-	@include pxrem(margin-right, 15px);
+	@include pxrem(margin, 15px 15px 0 0);
 	display: inline;
 	float: left;
 	img {
@@ -51,12 +57,28 @@
 	}
 }
 
+.entry-header-index {
+	overflow: hidden;
+}
+
 .entry-meta {
+	@extend %clearfix;
 	@include font-size(13);
 	@include pxrem(margin-bottom, 10px);
 	color: $gray-darker;
+
 	.published {
 		color: $gray-darker;
+	}
+
+	.comments-link {
+		float: right;
+		a {
+			color: $gray-darker;
+		}
+		.dashicons {
+			color: $accent-1;
+		}
 	}
 }
 
@@ -64,7 +86,22 @@
 	overflow: hidden;
 }
 
-.entry-content {
-	@include font-size(14);
-	line-height: 1.5;
+.entry-footer {
+	@include font-size(12);
+	color: $gray-darker;
+}
+
+/**
+ * 404 page
+ */
+.not-found {
+
+	h2 {
+		@include font-size(16);
+	}
+
+	div {
+		@include pxrem(margin-bottom, 40px);
+	}
+
 }
