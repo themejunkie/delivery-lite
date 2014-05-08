@@ -1,0 +1,62 @@
+/**
+ * Primary navigation
+ */
+
+// Accent navigation color
+$color-nav: #2aa4cf;
+
+.main-navigation {
+	@extend %clearfix;
+	box-shadow: rgba($black, .2) 0px 2px 2px -1px;
+	background-color: $accent-1;
+	border-bottom: 1px solid #2693BA;
+}
+
+.navigation-item {
+	@extend .container;
+}
+
+.menu-primary-items {
+	@include span(9 of 12);
+
+	.sfHover {
+		background-color: $color-nav;
+	}
+
+	a {
+		@include font-size(11);
+		@include pxrem(padding, 14px 18px);
+		color: $white;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		&:hover,
+		&:visited:hover {
+			@extend .sfHover;
+			color: $white;
+		}
+	}
+
+	.sub-menu {
+		a {
+			@extend .sfHover;
+			&:hover {
+				background-color: $accent-1;
+			}
+		}
+	}
+
+}
+
+/**
+ * Breadcrumbs
+ */
+.breadcrumbs {
+	@include font-size(12);
+	@include pxrem(margin-bottom, 20px);
+	color: $gray-darker;
+
+	.sep {
+		@include pxrem(padding, 0 5px);
+		color: $gray;
+	}
+}

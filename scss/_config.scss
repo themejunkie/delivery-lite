@@ -1,9 +1,23 @@
-// Typography
-// ----------------------------------------------------------------------------------------------------------------
+// Import helpers files
+// -------------------------------------------------
 
-// Compass like baseline
-$base-font-size:       16px;
-$base-line-height:     24px;
+// Dependencies
+@import 'bourbon';
+@import "susy";
+
+// Variables
+@import "helpers/font-stacks";
+@import "helpers/color-palettes";
+
+// Mixins
+@import "helpers/mixins";
+
+// Typography Variables
+// -------------------------------------------------
+
+// Basic Typography
+$base-font-size:       13px;
+$base-line-height:     20px;
 $font-size:            $base-font-size !default;
 $browser-font-size:    16px !default;
 
@@ -12,12 +26,12 @@ $browser-font-size:    16px !default;
 $global-bold-weight:   700 !default;
 
 // Body type
-$body-font-family:     $arial !default;
+$body-font-family:     'Droid Sans', sans-serif !default;
 $body-font-weight:     400 !default;
 $body-font-style:      normal !default;
 
 // Heading type
-$heading-font-family:  $arial !default;
+$heading-font-family:  $body-font-family !default;
 $heading-font-weight:  700 !default;
 $heading-font-style:   normal !default;
 
@@ -30,28 +44,28 @@ $table-font-size:      12px !default;
 
 // Form type
 $form-font-size:       $base-font-size !default;
-$input-font-family:    $arial !default;
+$input-font-family:    $body-font-family !default;
 $input-font-size:      13px !default;
-$btn-font-family:      $arial !default;
+$btn-font-family:      $body-font-family !default;
 $btn-font-size:        12px !default;
 $btn-font-weight:      $global-bold-weight !default;
 
-// Color
-// ----------------------------------------------------------------------------------------------------------------
+// Color Variables
+// -------------------------------------------------
 
 // Project base color
 $body-bg-color:        $white !default;
-$border-color:         $gray_light !default;
-$accent-1:             $black !default;
-$accent-2:             $black !default;
+$border-color:         #e9e9e9 !default;
+$accent-1:             #50B7DC !default;
+// $accent-2:             $black !default;
 
 // Selection color
 $selection-bg-color:   $black !default;
 $selection-font-color: $white !default;
 
 // Typography color
-$body-font-color:      $black-light !default;
-$heading-font-color:   $black-light !default;
+$body-font-color:      #777 !default;
+$heading-font-color:   #474747 !default;
 $del-font-color:       $gray_dark !default;
 $code-font-color:      #2080ad !default;
 $pre-bg-color:         #fafafa !default;
@@ -62,7 +76,7 @@ $quote-font-color:     $gray-dark !default;
 $cite-font-color:      $black-lighter !default;
 
 // Link color
-$link-color:           $turquoise !default;
+$link-color:           #2aa4cf !default;
 $link-hover-color:     lighten($link-color, 10%) !default;
 $link-visited-color:   darken($link-color, 5%) !default;
 
@@ -81,9 +95,14 @@ $btn-bg-color:         #f0f0f0 !default;
 $btn-border-color:     $input-border-color !default;
 $btn-font-color:       $body-font-color !default;
 
-// Misc
-// ----------------------------------------------------------------------------------------------------------------
+// Misc Variables
+// -------------------------------------------------
 
 // Form
 $btn-border-radius:    0 !default;
 $input-border-radius:  0 !default;
+
+
+// Susy Grids Setting
+// http://susydocs.oddbird.net/en/latest/settings/
+// -------------------------------------------------

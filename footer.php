@@ -1,30 +1,21 @@
-				<?php hybrid_get_sidebar( 'primary' ); // Loads the sidebar/primary.php template. ?>
+	</div><!-- #content -->
 
-			</div><!-- #main -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="footer-item">
 
-		</div><!-- .container -->
+			<?php get_sidebar( 'footer' ); // Loads the sidebar-footer.php template. ?>
 
-		<footer <?php hybrid_attr( 'footer' ); ?>>
+			<div class="site-info">
+				<a class="powered" href="<?php echo esc_url( __( 'http://wordpress.org/', 'delivery' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'delivery' ), 'WordPress' ); ?></a>
+				<?php printf( __( 'Theme: %1$s by %2$s.', 'delivery' ), 'Delivery Lite', '<a href="http://www.theme-junkie.com/" rel="designer">Theme Junkie</a>' ); ?>
+			</div><!-- .site-info -->
 
-			<div class="container">
+		</div><!-- .footer-item -->
+	</footer><!-- #colophon -->
+	
+</div><!-- #page -->
 
-				<?php hybrid_get_menu( 'social' ); // Loads the menu/social.php template. ?>
-
-				<p class="credit">
-					<?php printf(
-						/* Translators: 1 is current year, 2 is site name/link, 3 is WordPress name/link, and 4 is theme name/link. */
-						__( 'Copyright &#169; %1$s %2$s. Powered by %3$s and %4$s.', 'stargazer' ), 
-						date_i18n( 'Y' ), hybrid_get_site_link(), hybrid_get_wp_link(), hybrid_get_theme_link()
-					); ?>
-				</p><!-- .credit -->
-
-			</div><!-- .container -->
-
-		</footer><!-- #footer -->
-
-	</div><!-- #site -->
-
-	<?php wp_footer(); // WordPress hook for loading JavaScript, toolbar, and other things in the footer. ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

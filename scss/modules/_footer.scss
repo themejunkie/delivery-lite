@@ -1,0 +1,13 @@
+.footer-item {
+	@extend .container;
+}
+
+.site-info {
+	@include pxrem(margin-bottom, 30px);
+	text-align: center;
+
+	.powered {
+		display: block;
+	}
+
+}

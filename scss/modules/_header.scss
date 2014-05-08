@@ -1,0 +1,63 @@
+/**
+ * Search form
+ */
+.searchform {
+	@include span(3 of 12 last);
+	position: relative;
+	color: #dcdcdc;
+
+	div {
+		position: relative;
+		float: right;
+	}
+
+	.dashicons {
+		@include pxrem(left, 6px);
+		@include pxrem(top, 14px);
+		@include pxrem(width, 16px);
+		@include pxrem(height, 16px);
+		@include font-size(16px);
+		position: absolute;
+	}
+
+	.field {
+		@include pxrem(margin-top, 6px);
+		@include pxrem(padding-left, 25px);
+		@include pxrem(width, 90px);
+		transition: width 400ms ease-in-out 0s;
+		border-radius: 3px;
+		border-color: transparent;
+		&:focus {
+			@include pxrem(width, 233px);
+		}
+	}
+
+}
+
+/**
+ * Header
+ */
+.site-header {
+	@include pxrem(padding, 24px 0);
+}
+
+.site-branding {
+	@include span(3 of 12);
+
+	.site-title {
+		@include font-size(30);
+		margin-bottom: 0;
+	}
+
+	.site-description {
+		@include pxrem(margin-top, 6px);
+		@include font-size(14);
+		font-weight: normal;
+		color: #777;
+	}
+
+}
+
+.header-item {
+	@extend .container;
+}

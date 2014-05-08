@@ -1,0 +1,30 @@
+.pagination {
+	@include pxrem(margin, 15px 0);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+
+	.page-numbers {
+		@include pxrem(padding, 7px 12px);
+		@include pxrem(margin-left, -4px);
+		background: #fbfbfb;
+		background: linear-gradient(top, #fbfbfb, #eee);
+		display: inline-block;
+		border-top: 1px solid $border-color;
+		border-bottom: 1px solid $gray-light;
+		border-right: 1px solid $gray-light;
+		color: $gray-darker;
+		text-decoration: none;
+		&:first-child {
+			border-left: 1px solid $gray-light;
+		}
+		&:hover {
+			background: $white;
+		}
+	}
+
+	.current {
+		background: $white;
+	}
+
+}

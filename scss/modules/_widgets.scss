@@ -1,0 +1,123 @@
+/**
+ * Header sidebar
+ */
+.widget-header {
+	@include span(9 of 12 last);
+}
+
+/**
+ * Home sidebar
+ */
+.has-left-sidebar {
+
+	.widget-home {
+		float: left;
+		width: 17%;
+
+		.widget {
+			border-right: 0;
+		}
+	}
+
+}
+
+/**
+ * Primary sidebar
+ */
+.widget-primary {
+	float: right;
+	width: 34%;
+}
+
+.widget-area {
+
+	.widget {
+		@include pxrem(margin, 0 0 -1px -1px);
+		@include pxrem(padding-bottom, 10px);
+		border: 1px solid $border-color;
+
+		&:hover .widget-title {
+			border-bottom-color: #ff0000;
+			color: #666;
+		}
+
+		> div {
+			@include pxrem(padding, 10px 20px);
+		}
+
+	}
+
+	.widget-title {
+		@include pxrem(margin, 0 0 10px 0);
+		@include pxrem(padding, 10px 20px);
+		@include font-size(14);
+		background: #f4f4f4;
+		border-bottom: 1px solid $border-color;
+		color: #666;
+		font-weight: normal;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-shadow: 0 1px 0 #fff;
+	}
+
+	ul {
+		@extend %reset-list;
+	}
+
+	li {
+		@include pxrem(padding, 8px 20px 8px 30px);
+		position: relative;
+		&:hover {
+			background-color: #ddf0f9;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 1.5em;
+			margin-top: -3px;
+			height: 0;
+			width: 0;
+			border: 3px solid transparent;
+			border-left-color: $gray-darker;
+		}
+	}
+
+}
+
+/**
+ * Footer sidebar
+ */
+.widget-footer {
+	@extend %clearfix;
+	@include pxrem(padding, 20px 25px);
+	@include pxrem(margin-bottom, 20px);
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 2px -1px;
+	background: #50B7DC;
+	border-bottom: 1px solid #2693BA;
+	color: $white;
+
+	.widget {
+		@include span(3 of 12);
+		@include font-size(12);
+		&:nth-child(4n) {
+			@include last;
+		}
+		li {
+			@include pxrem(padding, 2px 0 2px 0);
+		}
+	}
+
+	.widget-title {
+		@include pxrem(margin-bottom, 10px);
+		@include font-size(13);
+		color: $white;
+		text-transform: uppercase;
+	}
+
+	a,
+	a:visited {
+		color: $white;
+	}
+
+}

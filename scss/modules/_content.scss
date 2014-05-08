@@ -1,0 +1,70 @@
+.site-content {
+	@extend .container;
+	@include pxrem(margin-bottom, 30px);
+}
+
+.content-area {
+	float: left;
+	width: 66%;
+
+	.has-left-sidebar & {
+		width: 49%;
+	}
+
+}
+
+.content-area {
+	@include pxrem(padding, 20px 20px 30px 20px);
+	border: 1px solid $border-color;
+}
+
+.hentry {
+	@include pxrem(margin-bottom, 30px);
+	@include pxrem(padding-bottom, 30px);
+	border-bottom: 1px solid $border-color;
+}
+
+.entry-title {
+	@include font-size(20, true);
+	font-weight: normal;
+
+	.single & {
+		@include font-size(26);
+		line-height: 1.2;
+	}
+
+	a {
+		color: #474747;
+		&:hover {
+			color: $link-color;
+		}
+	}
+
+}
+
+.thumb-link {
+	@include pxrem(margin-right, 15px);
+	display: inline;
+	float: left;
+	img {
+		box-shadow: 0 0 3px rgba($black, .2);
+	}
+}
+
+.entry-meta {
+	@include font-size(13);
+	@include pxrem(margin-bottom, 10px);
+	color: $gray-darker;
+	.published {
+		color: $gray-darker;
+	}
+}
+
+.entry-summary {
+	overflow: hidden;
+}
+
+.entry-content {
+	@include font-size(14);
+	line-height: 1.5;
+}

@@ -1,27 +1,8 @@
+// Based off Formalize
+// https://github.com/nathansmith/formalize
+
 form {
 	@include pxrem(font-size, $form-font-size);
-}
-
-.input_full {
-	width: 100%;
-}
-
-// Added via JS to <textarea> and class="input_full".
-// Applies only to IE7. Other browsers don't need it.
-.input_full_wrap {
-	display: block;
-	padding-right: 8px;
-}
-
-a.button {
-	// IE7
-	*padding-bottom: 3px;
-}
-
-button {
-	// IE7
-	*padding-top: 1px;
-	*padding-bottom: 1px;
 }
 
 input[type="search"]::-webkit-search-decoration {
@@ -54,11 +35,11 @@ a.button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-	@include border-radius($btn-border-radius);
 	@include pxrem(font-size, $btn-font-size);
 	@include pxrem(padding, 3px 10px);
 	-webkit-appearance: none;
 	background-clip: padding-box;
+	border-radius: $btn-border-radius;
 	transition: all 200ms ease-in-out 0s;
 	background-color: $btn-bg-color;
 	border: 1px solid $btn-border-color;
@@ -78,10 +59,6 @@ input[type="button"] {
 		background-color: lighten($btn-bg-color, 5%);
 		text-decoration: none;
 	}
-
-	// IE7
-	*padding-top: 2px;
-	*padding-bottom: 0;
 
 	// Kill phantom spacing and dotted
 	// border that appears in Firefox.
@@ -106,11 +83,11 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-	@include border-radius($input-border-radius);
 	@include pxrem(padding, 5px);
 	@include pxrem(font-size, $input-font-size);
 	box-sizing: border-box;
 	background-clip: padding-box;
+	border-radius: $input-border-radius;
 	-webkit-appearance: none;
 	background-color: $input-bg-color;
 	border: 1px solid $input-border-color;
@@ -121,11 +98,6 @@ input[type="week"] {
 	text-align: left;
 	height: 2.5em;
 	vertical-align: top;
-
-	// IE7
-	*padding-top: 2px;
-	*padding-bottom: 1px;
-	*height: auto;
 
 	&[disabled] {
 		background-color: #eee;
@@ -179,8 +151,6 @@ select[multiple] {
 select[size="0"],
 select[size="1"] {
 	height: 2.5em;
-	// IE7
-	*height: auto;
 }
 
 // Tweaks for Safari + Chrome.
@@ -202,6 +172,7 @@ select[size="1"] {
 	}
 
 	::-webkit-validation-bubble-message {
+		-webkit-box-shadow: none;
 		box-shadow: none;
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(1, black));
 		border: 0;

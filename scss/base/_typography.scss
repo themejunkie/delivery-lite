@@ -26,7 +26,12 @@ a {
 /**
  * Headings.
  */
-@include headings() {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	@include pxrem(margin, $base-line-height/2 0);
 	color: $heading-font-color;
 	font-family: $heading-font-family;
@@ -37,25 +42,25 @@ a {
 h1,
 .h1 {
 	@include pxrem(font-size, 36px);
-	line-height: 1.1;
+	line-height: 1.1em;
 }
 
 h2,
 .h2 {
 	@include pxrem(font-size, 30px);
-	line-height: 1.1;
+	line-height: 1.1em;
 }
 
 h3,
 .h3 {
 	@include pxrem(font-size, 24px);
-	line-height: 1.3;
+	line-height: 1.3em;
 }
 
 h4,
 .h4 {
 	@include pxrem(font-size, 20px);
-	line-height: 1.3;
+	line-height: 1.3em;
 }
 
 h5,

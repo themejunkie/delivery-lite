@@ -2,28 +2,53 @@
 /**
  * TGM Plugin Lists
  *
- * @package    Delivery_Lite
+ * @package    Delivery Lite
  * @author     Theme Junkie
  * @copyright  Copyright (c) 2014, Theme Junkie
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
  * @since      1.0.0
  */
 
-add_action( 'tgmpa_register', 'basic_register_plugins' );
+// Include the TGM_Plugin_Activation class.
+require trailingslashit( get_template_directory() ) . 'inc/classes/class-tgm-plugin-activation.php';
 
+add_action( 'tgmpa_register', 'delivery_register_plugins' );
 /**
  * Register required and recommended plugins.
  *
  * @since  1.0.0
- * @access public
  */
-function basic_register_plugins() {
+function delivery_register_plugins() {
 
 	$plugins = array(
 
 		array(
 			'name'     => 'Theme Junkie Custom CSS',
 			'slug'     => 'theme-junkie-custom-css',
+			'required' => false,
+		),
+
+		array(
+			'name'     => 'Theme Junkie Portfolio Content',
+			'slug'     => 'theme-junkie-portfolio-content',
+			'required' => false,
+		),
+
+		array(
+			'name'     => 'Jetpack by WordPress.com',
+			'slug'     => 'jetpack',
+			'required' => false,
+		),
+
+		array(
+			'name'     => 'WordPress SEO by Yoast',
+			'slug'     => 'wordpress-seo',
+			'required' => false,
+		),
+
+		array(
+			'name'     => 'Ninja Forms',
+			'slug'     => 'ninja-forms',
 			'required' => false,
 		),
 

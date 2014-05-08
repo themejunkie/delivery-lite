@@ -1,10 +1,10 @@
 .alignleft {
-	@include float(left);
+	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	@include float(right);
+	float: right;
 	margin-left: 1.5em;
 }
 
@@ -17,7 +17,7 @@
     display: block;
 }
 
-.accessible-text {
+.screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
 }

@@ -5,77 +5,137 @@
  * Contains all of the Theme's setup functions, custom functions,
  * custom hooks and Theme settings.
  * 
- * @package    Delivery_Lite
+ * @package    Delivery Lite
  * @author     Theme Junkie
  * @copyright  Copyright (c) 2014, Theme Junkie
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
  * @since      1.0.0
  */
 
-/* Load the Hybrid Core framework and launch it. */
-require_once( trailingslashit( get_template_directory() ) . 'hybrid/hybrid.php' );
-new Hybrid();
-
-/* Load theme-supports files. */
-require_once( trailingslashit( get_template_directory() ) . 'inc/theme-supports.php' );
-
-/* Load constants file. */
-require_once( trailingslashit( get_template_directory() ) . 'inc/constants.php' );
-
-/* Set up the theme early. */
-add_action( 'after_setup_theme', 'basic_theme_setup', 5 );
-
-/* Load include files. */
-add_action( 'after_setup_theme', 'basic_load_libraries', 10 );
+// Do theme setup on the 'after_setup_theme' hook.
+add_action( 'after_setup_theme', 'delivery_theme_setup' );
 
 /**
- * The theme setup function. This function sets up support for various 
- * WordPress and framework functionality.
+ * Sets up theme defaults and registers support for various WordPress features.
  *
  * @since  1.0.0
- * @access public
  */
-function basic_theme_setup() {
+function delivery_theme_setup() {
 
-	/* Editor styles. */
-	add_editor_style( trailingslashit( THEME_CSS ) . 'editor-style.css' );
+	// Set the content width based on the theme's design and stylesheet.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; /* pixels */
+	}
 
-	/* Handle content width for embeds and images. */
-	hybrid_set_content_width( 1025 );
+	// Make the theme available for translation.
+	load_theme_textdomain( 'delivery', trailingslashit( get_template_directory() ) . 'languages' );
+
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	// Enable support for Post Thumbnails.
+	add_theme_support( 'post-thumbnails' );
+
+	// Register custom navigation menu.
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'delivery' ),
+			'social'  => __( 'Social Menu' , 'delivery' ),
+		)
+	);
+
+	// Enable support for Post Formats.
+	add_theme_support(
+		'post-formats',
+		array( 'audio', 'image', 'gallery', 'link', 'video' )
+	);
+
+	// Add custom stylesheet file to the TinyMCE visual editor.
+	add_editor_style( trailingslashit( get_template_directory_uri() ) . 'assets/css/editor-style.css' );
+
+	// Setup the WordPress core custom background feature.
+	add_theme_support(
+		'custom-background',
+		apply_filters( 'delivery_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) )
+	);
+
+	// Enable support for HTML5 markup.
+	add_theme_support(
+		'html5',
+		array( 'comment-list', 'search-form', 'comment-form', 'gallery', 'caption' )
+	);
 
 }
 
 /**
- * Various custom function files.
- *
+ * Site branding for the site.
+ * 
+ * Display site title by default, but user can change it with their custom logo.
+ * They can upload it on Customizer page.
+ * 
  * @since  1.0.0
- * @access public
  */
-function basic_load_libraries() {
+function delivery_site_branding() {
 
-	/* Functions. */
-	require_once( trailingslashit( THEME_INC ) . 'functions.php' );
+	$logo = get_theme_mod( 'delivery_logo' );
 
-	/* Template Tags. */
-	require_once( trailingslashit( THEME_INC ) . 'template-tags.php' );
+	// Check if logo available, then display it.
+	if ( $logo ) {
+		echo '<div class="site-logo">' . "\n";
+			echo '<a href="' . esc_url( get_home_url() ) . '" rel="home">' . "\n";
+				echo '<img class="logo" src="' . esc_url( $logo ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
+			echo '</a>' . "\n";
+		echo '</div>' . "\n";
 
-	/* Scripts. */
-	require_once( trailingslashit( THEME_INC ) . 'scripts.php' );
-
-	/* Helpers. */
-	require_once( trailingslashit( THEME_INC ) . 'helpers.php' );
-
-	/* Custom Hybrid functions. */
-	require_once( trailingslashit( THEME_INC ) . 'hybrid.php' );
-
-	/* Custom attributes functions. */
-	require_once( trailingslashit( THEME_INC ) . 'attr.php' );
-
-	/* Options Framework functions. */
-	require_once( trailingslashit( THEME_ADMIN ) . 'options-framework.php' );
-
-	/* Require and recommended plugins. */
-	require_once( trailingslashit( THEME_CLASSES ) . 'class-tgm-plugin-activation.php' );
-	require_once( trailingslashit( THEME_INC ) . 'plugins.php' );
+	// If not, then display the Site Title and Site Description.
+	} else {
+		echo '<h1 class="site-title"><a href="' . esc_url( get_home_url() ) . '" rel="home">' . esc_attr( get_bloginfo( 'name' ) ) . '</a></h1>';
+		echo '<h2 class="site-description">' . esc_attr( get_bloginfo( 'description' ) ) . '</h2>';
+	}
 
 }
+
+/**
+ * Sets up custom filters and actions for the theme.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/functions.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/template-tags.php';
+
+/**
+ * Enqueue scripts and styles.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/scripts.php';
+
+/**
+ * Require and recommended plugins list.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/plugins.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
+
+/**
+ * We use some part of Hybrid Core to extends our themes.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/hybrid.php';
+
+/**
+ * Load Options Framework core.
+ */
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . 'admin/' );
+require trailingslashit( get_template_directory() ) . 'admin/options-framework.php';

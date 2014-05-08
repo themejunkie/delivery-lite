@@ -1,37 +1,33 @@
-<?php get_header(); // Loads the header.php template. ?>
+<?php get_header(); ?>
 
-<main <?php hybrid_attr( 'content' ); ?>>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-	<?php if ( !is_front_page() && !is_singular() && !is_404() ) : // If viewing a multi-post page ?>
+		<?php if ( have_posts() ) : ?>
 
-		<?php locate_template( array( 'misc/loop-meta.php' ), true ); // Loads the misc/loop-meta.php template. ?>
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-	<?php endif; // End check for multi-post page. ?>
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
 
-	<?php if ( have_posts() ) : // Checks if any posts were found. ?>
+			<?php endwhile; ?>
 
-		<?php while ( have_posts() ) : // Begins the loop through found posts. ?>
+			<?php get_template_part( 'loop', 'nav' ); // Loads the loop-nav.php template ?>
 
-			<?php the_post(); // Loads the post data. ?>
+		<?php else : ?>
 
-			<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
+			<?php get_template_part( 'content', 'none' ); ?>
 
-			<?php if ( is_singular() ) : // If viewing a single post/page/CPT. ?>
+		<?php endif; ?>
 
-				<?php comments_template( '', true ); // Loads the comments.php template. ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-			<?php endif; // End check for single post. ?>
-
-		<?php endwhile; // End found posts loop. ?>
-
-		<?php locate_template( array( 'misc/loop-nav.php' ), true ); // Loads the misc/loop-nav.php template. ?>
-
-	<?php else : // If no posts were found. ?>
-
-		<?php locate_template( array( 'content/error.php' ), true ); // Loads the content/error.php template. ?>
-
-	<?php endif; // End check for posts. ?>
-
-</main><!-- #content -->
-
-<?php get_footer(); // Loads the footer.php template. ?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

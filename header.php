@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes( 'html' ); ?>>
-
+<html class="no-js" <?php language_attributes(); ?>>
 <head>
-<?php wp_head(); // Hook required for scripts, styles, and other <head> items. ?>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+<?php wp_head(); ?>
 </head>
 
-<body <?php hybrid_attr( 'body' ); ?>>
+<body <?php body_class(); ?>>
 
-	<div id="site">
+<div id="page" class="hfeed site">
 
-		<div class="container">
+	<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
 
-			<header <?php hybrid_attr( 'header' ); ?>>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-item">
 
-				<?php if ( display_header_text() ) : // If user chooses to display header text. ?>
+			<div class="site-branding">
+				<?php delivery_site_branding(); // Custom function to display site title or logo. ?>
+			</div>
 
-					<div id="branding">
-						<?php hybrid_site_title(); ?>
-						<?php hybrid_site_description(); ?>
-					</div><!-- #branding -->
+			<?php get_sidebar( 'header' ); // Loads the sidebar-header.php template. ?>
 
-				<?php endif; ?>
+		</div><!-- .header-item -->
+	</header><!-- #masthead -->
 
-			</header><!-- #header -->
+	<div id="content" class="site-content">
 
-			<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
-
-			<div id="main" class="main">
-
-				<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>
+		<?php
+			// Loads the sidebar-home.php template.
+			// It only displayed on home page.
+			get_sidebar( 'home' );
+		?>

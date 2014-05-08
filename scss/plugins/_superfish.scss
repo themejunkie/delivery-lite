@@ -1,0 +1,99 @@
+/**
+ * Superfish style.
+ */
+.sf-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	> li {
+		float: left;
+	}
+
+	li {
+		position: relative;
+	}
+
+	ul {
+		position: absolute;
+		display: none;
+		top: 100%;
+		left: 0;
+		z-index: 99;
+	}
+
+	li {
+		&:hover > ul,
+		&.sfHover > ul {
+			display: block;
+		}
+	}
+
+	a {
+		display: block;
+		position: relative;
+	}
+
+	ul ul {
+		top: 0;
+		left: 100%;
+	}
+
+}
+
+.sf-arrows {
+
+	> {
+		li {
+			> .sf-with-ul:focus:after, &:hover > .sf-with-ul:after {
+				border-top-color: white;
+			}
+		}
+		.sfHover > .sf-with-ul:after {
+			border-top-color: white;
+		}
+	}
+
+	.sf-with-ul {
+		padding-right: 2.5em;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 1em;
+			margin-top: -3px;
+			height: 0;
+			width: 0;
+			border: 5px solid transparent;
+			border-top-color: #dfeeff;
+			border-top-color: rgba(255, 255, 255, 0.5);
+		}
+
+	}
+
+	ul {
+		.sf-with-ul:after {
+			margin-top: -5px;
+			margin-right: -3px;
+			border-color: transparent;
+			border-left-color: #dFeEFF;
+			border-left-color: rgba(255, 255, 255, 0.5);
+		}
+		li {
+			> .sf-with-ul:focus:after, &:hover > .sf-with-ul:after {
+				border-left-color: white;
+			}
+		}
+		.sfHover > .sf-with-ul:after {
+			border-left-color: white;
+		}
+	}
+
+}
