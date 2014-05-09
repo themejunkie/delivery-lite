@@ -49,9 +49,8 @@
  */
 .comments-title {
 	@include pxrem(margin-bottom, 20px);
-	@include pxrem(padding-bottom, 14px);
 	@include font-size(16, true);
-	border-bottom: 1px solid $border-color;
+	font-weight: 700;
 }
 
 .comment-list {
@@ -107,4 +106,8 @@
 .comment-content {
 	@include pxrem(margin-bottom, 20px);
 	@include pxrem(padding-left, 63px);
+}
+
+.comment-navigation {
+	@include pxrem(margin, 20px 0);
 }

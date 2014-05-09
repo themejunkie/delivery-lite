@@ -1,25 +1,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<?php
-		// Sets up two different thumbnail size, for archive and post page.
-		$size = '';
-		if ( is_archive() || is_search() ) {
-			$size = 'delivery-archive';
-		} else {
-			$size = 'delivery-post';
-		}
-	?>
-
-	<?php if ( has_post_thumbnail() ) : // Check if post has post thumbnail. ?>
-		<a class="thumb-link" href="<?php the_permalink(); ?>" rel="bookmark">
-			<?php the_post_thumbnail( $size, array( 'class' => 'post-thumbnail', 'alt' => get_the_title() ) ); ?>
-		</a>
-	<?php endif; ?>
+	<?php delivery_post_thumbnail(); ?>
 
 	<header class="entry-header entry-header-index">
-		<h1 class="entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-		</h1>
+		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">

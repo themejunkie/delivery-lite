@@ -1,5 +1,10 @@
-figure > img {
-    display: block;
+figure {
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	> img {
+	    display: block;
+	}
 }
 
 img {
@@ -17,4 +22,15 @@ iframe,
 object {
 	max-width: 100%;
 	width: 100%; 
+}
+
+.wp-caption {
+	img {
+		@include pxrem(margin-bottom, 5px);
+	}
+}
+
+.wp-caption-text {
+	font-style: italic;
+	color: $gray-darker;
 }

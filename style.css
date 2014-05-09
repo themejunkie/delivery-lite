@@ -402,7 +402,7 @@ h6 {
   color: #474747;
   font-family: "Droid Sans", sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 h1,
@@ -922,6 +922,11 @@ table input {
 /*------------------------------------*\
 	$IMAGE
 \*------------------------------------*/
+figure {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
 figure > img {
   display: block;
 }
@@ -941,6 +946,16 @@ iframe,
 object {
   max-width: 100%;
   width: 100%;
+}
+
+.wp-caption img {
+  margin-bottom: 5px;
+  margin-bottom: 0.38462rem;
+}
+
+.wp-caption-text {
+  font-style: italic;
+  color: #999999;
 }
 
 /*------------------------------------*\
@@ -1220,10 +1235,20 @@ object {
   overflow: hidden;
 }
 
+.entry-content {
+  margin-bottom: 30px;
+  margin-bottom: 2.30769rem;
+}
+
 .entry-footer {
   font-size: 12px;
   font-size: 0.92308rem;
   color: #999999;
+}
+
+.cat-links,
+.tags-links {
+  display: block;
 }
 
 /**
@@ -1409,12 +1434,10 @@ object {
 .comments-title {
   margin-bottom: 20px;
   margin-bottom: 1.53846rem;
-  padding-bottom: 14px;
-  padding-bottom: 1.07692rem;
   font-size: 16px;
   font-size: 1.23077rem;
   line-height: 1.25;
-  border-bottom: 1px solid #e9e9e9;
+  font-weight: 700;
 }
 
 .comment-list .children {
@@ -1469,6 +1492,11 @@ object {
   padding-left: 4.84615rem;
 }
 
+.comment-navigation {
+  margin: 20px 0;
+  margin: 1.53846rem 0;
+}
+
 /*------------------------------------*\
 	$PAGINATIONS
 \*------------------------------------*/
@@ -1497,7 +1525,7 @@ object {
 .pagination .page-numbers:hover {
   background: white;
 }
-.pagination .current {
+.pagination .page-numbers.current {
   background: white;
 }
 
@@ -1614,14 +1642,14 @@ object {
 /*------------------------------------*\
 	$GLOBAL
 \*------------------------------------*/
-.main-navigation, .menu-secondary-items, .entry-meta, .widget-footer, .comment-form p, .comment-body {
+.main-navigation, .menu-secondary-items, .hentry, .entry-meta, .widget-footer, .comment-form p, .comment-body {
   *zoom: 1;
 }
-.main-navigation:before, .menu-secondary-items:before, .entry-meta:before, .widget-footer:before, .comment-form p:before, .comment-body:before, .main-navigation:after, .menu-secondary-items:after, .entry-meta:after, .widget-footer:after, .comment-form p:after, .comment-body:after {
+.main-navigation:before, .menu-secondary-items:before, .hentry:before, .entry-meta:before, .widget-footer:before, .comment-form p:before, .comment-body:before, .main-navigation:after, .menu-secondary-items:after, .hentry:after, .entry-meta:after, .widget-footer:after, .comment-form p:after, .comment-body:after {
   content: "";
   display: table;
 }
-.main-navigation:after, .menu-secondary-items:after, .entry-meta:after, .widget-footer:after, .comment-form p:after, .comment-body:after {
+.main-navigation:after, .menu-secondary-items:after, .hentry:after, .entry-meta:after, .widget-footer:after, .comment-form p:after, .comment-body:after {
   clear: both;
 }
 

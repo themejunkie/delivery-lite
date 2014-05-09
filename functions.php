@@ -138,6 +138,35 @@ add_action( 'edit_category', 'delivery_category_transient_flusher' );
 add_action( 'save_post',     'delivery_category_transient_flusher' );
 
 /**
+ * Sets up different post thumbnail size.
+ *
+ * @since  1.0.0
+ */
+function delivery_post_thumbnail() {
+
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	// Sets up empty variable.
+	$size = '';
+
+	// Check if on archive or search page.
+	if ( is_archive() || is_search() ) :
+		$size = 'delivery-archive';
+	else :
+		$size = 'delivery-post';
+	endif;
+	?>
+
+	<a class="thumb-link" href="<?php the_permalink(); ?>" rel="bookmark">
+		<?php the_post_thumbnail( $size, array( 'class' => 'post-thumbnail', 'alt' => esc_attr( get_the_title() ) ) ); ?>
+	</a>
+
+<?php
+}
+
+/**
  * Sets up custom filters and actions for the theme.
  */
 require trailingslashit( get_template_directory() ) . 'inc/functions.php';

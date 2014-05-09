@@ -19,6 +19,7 @@
 }
 
 .hentry {
+	@extend %clearfix;
 	@include pxrem(margin-bottom, 30px);
 	@include pxrem(padding-bottom, 30px);
 	border-bottom: 1px solid $border-color;
@@ -86,9 +87,18 @@
 	overflow: hidden;
 }
 
+.entry-content {
+	@include pxrem(margin-bottom, 30px);
+}
+
 .entry-footer {
 	@include font-size(12);
 	color: $gray-darker;
+}
+
+.cat-links,
+.tags-links {
+	display: block;
 }
 
 /**
