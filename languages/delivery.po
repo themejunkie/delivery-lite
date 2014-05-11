@@ -1,0 +1,492 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Delivery Lite 1.0.0\n"
+"POT-Creation-Date: 2014-05-11 20:23+0700\n"
+"PO-Revision-Date: 2014-05-11 20:23+0700\n"
+"Last-Translator: Satrya <satrya@satrya.me>\n"
+"Language-Team: Theme Junkie <satrya@theme-junkie.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;"
+"_nx\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:9
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:13
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: ../404.php:19
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: ../404.php:36
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: ../archive.php:20
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../archive.php:23
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../archive.php:26
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../archive.php:29
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../archive.php:32 ../inc/hybrid/breadcrumb-trail.php:181 ../sidebar.php:6
+msgid "Archives"
+msgstr ""
+
+#: ../comments.php:19
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: ../comments.php:26 ../comments.php:46
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:27 ../comments.php:47
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:28 ../comments.php:48
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:58
+msgid "Comments are closed."
+msgstr ""
+
+#: ../content-none.php:4
+msgid "Nothing Found"
+msgstr ""
+
+#: ../content-none.php:10
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../content-none.php:14
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../content-none.php:19
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../content-page.php:11 ../content-single.php:19
+msgid "Pages:"
+msgstr ""
+
+#: ../content-page.php:17 ../content-single.php:46
+#: ../inc/hybrid/breadcrumb-trail.php:1135
+#: ../inc/hybrid/breadcrumb-trail.php:1171
+#: ../inc/hybrid/breadcrumb-trail.php:1188
+#: ../inc/hybrid/breadcrumb-trail.php:1219
+msgid "Edit"
+msgstr ""
+
+#: ../content-single.php:10 ../content.php:13
+msgid "0"
+msgstr ""
+
+#: ../content-single.php:10 ../content.php:13
+msgid "1"
+msgstr ""
+
+#: ../content-single.php:10 ../content.php:13
+msgid "%"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: ../content-single.php:28 ../content-single.php:38
+msgid ", "
+msgstr ""
+
+#: ../content-single.php:32
+#, php-format
+msgid "Posted in: %1$s"
+msgstr ""
+
+#: ../content-single.php:42
+#, php-format
+msgid "Tagged: %1$s"
+msgstr ""
+
+#: ../footer.php:9
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: ../footer.php:9
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: ../footer.php:10
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: ../functions.php:43
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:44
+msgid "Secondary Menu"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:196
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:197
+msgid "Install Plugins"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:198
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:199
+msgid "Something went wrong."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:210
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:211
+msgid "Return to the dashboard"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:212
+#: ../inc/classes/class-tgm-plugin-activation.php:1951
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:213
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:214
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:215
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:544
+#: ../inc/classes/class-tgm-plugin-activation.php:2168
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1174
+msgid "Private Repository"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1177
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1182
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1185
+msgid "Required"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1185
+msgid "Recommended"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1188
+msgid "Not Installed"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1190
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1290
+#: ../inc/classes/class-tgm-plugin-activation.php:1398
+msgid "Install"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1312
+#: ../inc/classes/class-tgm-plugin-activation.php:1399
+msgid "Activate"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1361
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1377
+msgid "Plugin"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1378
+msgid "Source"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1379
+msgid "Type"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1380
+msgid "Status"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1508
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1616
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1934
+msgid "Install package not available."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1935
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1936
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1937
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1938
+msgid "Plugin install failed."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1939
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:1950
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2064
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2065
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2065
+#: ../inc/classes/class-tgm-plugin-activation.php:2074
+msgid "Show Details"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2065
+#: ../inc/classes/class-tgm-plugin-activation.php:2074
+msgid "Hide Details"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2066
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2071
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2072
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2073
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2074
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2075
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../inc/classes/class-tgm-plugin-activation.php:2076
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/customizer.php:34
+msgid "Delivery Settings"
+msgstr ""
+
+#: ../inc/customizer.php:52
+msgid "Upload Logo"
+msgstr ""
+
+#: ../inc/customizer.php:71
+msgid "Upload Favicon"
+msgstr ""
+
+#: ../inc/customizer.php:91
+msgid "Tag slug for featured post"
+msgstr ""
+
+#: ../inc/extras.php:98 ../inc/hybrid/breadcrumb-trail.php:185
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../inc/functions.php:40
+msgid "Post Thumbnail"
+msgstr ""
+
+#: ../inc/functions.php:41
+msgid "Archive Thumbnail"
+msgstr ""
+
+#: ../inc/functions.php:42
+msgid "Featured Thumbnail"
+msgstr ""
+
+#: ../inc/functions.php:43
+msgid "Small Featured Thumbnail"
+msgstr ""
+
+#: ../inc/functions.php:60
+msgid "An optional widget area for your site header."
+msgstr ""
+
+#: ../inc/functions.php:72
+msgid "The main sidebar, appears on posts and pages."
+msgstr ""
+
+#: ../inc/functions.php:84
+msgid "Secondary(left) sidebar, it only displayed on home page."
+msgstr ""
+
+#: ../inc/functions.php:96
+msgid "The footer sidebar, appears on the footer of your site."
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:178
+msgid "Browse:"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:179
+msgid "Home"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:180
+msgid "404 Not Found"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:183
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:187
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:189
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:1163
+msgid "Split"
+msgstr ""
+
+#: ../inc/hybrid/breadcrumb-trail.php:1167
+msgid "Merge"
+msgstr ""
+
+#: ../inc/template-tags.php:27
+#, php-format
+msgid ""
+"<span class=\"posted-on\">%1$s</span><span class=\"byline\"> &#8211; by "
+"%2$s</span>"
+msgstr ""
+
+#: ../loop-nav.php:4
+msgid "Previous Post: %link"
+msgstr ""
+
+#: ../loop-nav.php:5
+msgid "Next Post: %link"
+msgstr ""
+
+#: ../menu-primary.php:6
+msgid "Skip to content"
+msgstr ""
+
+#: ../search.php:9
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:4
+msgid "Search"
+msgstr ""
+
+#: ../sidebar.php:13
+msgid "Meta"
+msgstr ""

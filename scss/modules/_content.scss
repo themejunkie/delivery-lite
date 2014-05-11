@@ -93,11 +93,17 @@
 
 .entry-footer {
 	@include font-size(12);
+	clear: both;
 	color: $gray-darker;
 }
 
 .cat-links,
 .tags-links {
+	display: block;
+}
+
+.page-links {
+	clear: both;
 	display: block;
 }
 

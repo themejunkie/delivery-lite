@@ -25,7 +25,7 @@ function delivery_theme_setup() {
 	// Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$content_width = 640; /* pixels */
+		$content_width = 605; /* pixels */
 	}
 
 	// Make the theme available for translation.
