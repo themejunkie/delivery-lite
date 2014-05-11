@@ -3,6 +3,8 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<?php delivery_featured_content(); // Get the featured posts. ?>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -18,7 +20,7 @@
 
 			<?php endwhile; ?>
 
-			<?php get_template_part( 'loop', 'nav' ); // Loads the loop-nav.php template ?>
+			<?php get_template_part( 'loop', 'nav' ); // Loads the loop-nav.php template. ?>
 
 		<?php else : ?>
 

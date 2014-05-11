@@ -25,8 +25,10 @@ add_action( 'widgets_init', 'delivery_register_sidebars' );
  * @link  http://codex.wordpress.org/Function_Reference/add_image_size
  */
 function delivery_register_image_sizes() {
-	add_image_size( 'delivery-post'   , 110, 100, true );
-	add_image_size( 'delivery-archive', 150, 150, true );
+	add_image_size( 'delivery-post'    , 110, 100, true );
+	add_image_size( 'delivery-archive' , 150, 150, true );
+	add_image_size( 'delivery-featured', 438, 250, true );
+	add_image_size( 'delivery-thumb'   , 90 , 50 , true );
 }
 
 /**
@@ -35,8 +37,11 @@ function delivery_register_image_sizes() {
  * @since 1.0.0
  */
 function delivery_custom_name_image_sizes( $sizes ) {
-	$sizes['delivery-post']    = __( 'Post Thumbnail'   , 'delivery' );
-	$sizes['delivery-archive'] = __( 'Archive Thumbnail', 'delivery' );
+	$sizes['delivery-post']     = __( 'Post Thumbnail'          , 'delivery' );
+	$sizes['delivery-archive']  = __( 'Archive Thumbnail'       , 'delivery' );
+	$sizes['delivery-featured'] = __( 'Featured Thumbnail'      , 'delivery' );
+	$sizes['delivery-thumb']    = __( 'Small Featured Thumbnail', 'delivery' );
+	
 	return $sizes;
 }
 

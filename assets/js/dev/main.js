@@ -15,3 +15,38 @@ $(document).ready(function(){
 	});
 
 });
+
+$(window).load(function() {
+
+	/**
+	 * Equal Heights
+	 */
+	// $('#carousel li').equalHeights();
+
+	$(document).imagesLoaded(function(){
+
+		/**
+		 * Flexslider
+		 */
+		$('#carousel').flexslider({
+			animation: "slide",
+			controlNav: false,
+			directionNav: false,
+			animationLoop: false,
+			slideshow: false,
+			itemWidth: 109.5,
+			minItems: 4,
+			asNavFor: '#slider'
+		});
+		   
+		$('#slider').flexslider({
+			animation: "slide",
+			controlNav: false,
+			directionNav: false,
+			animationLoop: false,
+			slideshowSpeed: 5000,
+			sync: "#carousel"
+		});
+
+	});
+});

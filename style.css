@@ -1145,6 +1145,150 @@ object {
 /*------------------------------------*\
 	$SLIDER
 \*------------------------------------*/
+.featured-slider {
+  margin-bottom: 20px;
+  margin-bottom: 1.53846rem;
+}
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: none;
+}
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+.slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .slides {
+  display: block;
+}
+
+* html .slides {
+  height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+.flexslider {
+  margin-bottom: 20px;
+  margin-bottom: 1.53846rem;
+  position: relative;
+  zoom: 1;
+}
+
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.loading .flex-viewport {
+  max-height: 300px;
+}
+
+.flexslider .slides {
+  zoom: 1;
+}
+
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+}
+.flex-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0;
+}
+.flex-control-thumbs img {
+  width: 100%;
+  display: block;
+  opacity: .7;
+  cursor: pointer;
+}
+.flex-control-thumbs img:hover {
+  opacity: 1;
+}
+.flex-control-thumbs .flex-active {
+  opacity: 1;
+  cursor: default;
+}
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 10px;
+  }
+  .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 10px;
+  }
+}
+#carousel .slides li {
+  height: 12em;
+  border-top: 1px solid #e9e9e9;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #999;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+#carousel .slides li:first-child {
+  border-left: 1px solid #ddd;
+}
+#carousel .slides li:hover {
+  background: white;
+}
+#carousel .slides li.flex-active-slide {
+  background: white;
+}
+#carousel .slides div {
+  padding: 9px 10px;
+}
+#carousel img {
+  margin-bottom: 8px;
+  margin-bottom: 0.61538rem;
+}
+
 /*------------------------------------*\
 	$CONTENT
 \*------------------------------------*/
@@ -1669,7 +1813,7 @@ button,
 a.button,
 input[type="reset"],
 input[type="submit"],
-input[type="button"], .menu-secondary-items, .pagination .page-numbers {
+input[type="button"], .menu-secondary-items, #carousel .slides li, .pagination .page-numbers {
   background: #fbfbfb;
   background: -webkit-linear-gradient(top, #fbfbfb, #eeeeee);
   background: linear-gradient(to bottom, #fbfbfb, #eeeeee);

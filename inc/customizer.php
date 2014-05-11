@@ -74,6 +74,26 @@ function delivery_customize_register( $wp_customize ) {
 			)
 		) );
 
+	// Featured Posts setting.
+	$wp_customize->add_setting(
+		'delivery_featured_posts',
+		array(
+			'default'           => 'featured',
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => 'edit_theme_options'
+		)
+	);
+
+		// Featured Posts control.
+		$wp_customize->add_control(
+			'delivery_featured_posts_control',
+			array(
+				'label'    => esc_html__( 'Tag slug for featured post', 'delivery' ),
+				'section'  => 'delivery_settings',
+				'settings' => 'delivery_featured_posts'
+			)
+		);
+
 }
 
 /**
