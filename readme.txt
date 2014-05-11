@@ -1,10 +1,10 @@
 Theme Name:   Delivery Lite
 Theme URI:    http://www.theme-junkie.com
-Description:  Free magazine WordPress theme.
+Description:  Delivery Lite is the most easy-to-use WordPress theme, you won't find a thousand options in it, just install and you ready to change the world! But, it comes with clean design, beautiful and mobile-friendly. Well suited for online magazines websites, news websites or personal blogs. It has a easy-to-use logo and favicon uploader via customizer. The main features include a featured posts slider, built-in breadcrumbs, built-in pagination, 4 widget areas and 2 menus.
 Version:      1.0.0
 Author:       Theme Junkie
 Author URI:   http://www.theme-junkie.com
-Tags:         translation-ready
+Tags:         blue, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, editor-style, threaded-comments, translation-ready
 Contributors: themejunkie, satrya
 Requires:     3.6
 Tested up to: 3.9.1
