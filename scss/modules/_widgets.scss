@@ -14,6 +14,7 @@
 		float: left;
 		width: 17%;
 		border-left: 1px solid $border-color;
+		border-right: 1px solid $border-color;
 
 		.widget {
 			border-right: 0;
@@ -79,7 +80,7 @@
 				content: '';
 				position: absolute;
 				top: 50%;
-				left: 1.5em;
+				left: -0.7em;
 				margin-top: -3px;
 				height: 0;
 				width: 0;
@@ -125,6 +126,73 @@
 	a,
 	a:visited {
 		color: $white;
+	}
+
+}
+
+/**
+ * Custom category widget.
+ */
+.widget-area {
+
+	.delivery-categories {
+		padding-bottom: 0;
+
+		li {
+			padding: 0;
+			a::before {
+				border-left-color: transparent;
+			}
+		}
+	}
+
+}
+
+.delivery-categories {
+
+	li {
+		&:hover {
+			background: none;
+			a {
+				border-bottom-color: #ff0000;
+			}
+		}
+
+		&:last-child {
+			a {
+				border-bottom: 0;
+			}
+		}
+	
+		a {
+			border-bottom: 1px solid #e9e9e9;
+			color: #41B7D8;
+			display: block;
+			font-size: 14px;
+			font-weight: normal;
+			padding: 10px 20px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			&:hover {
+				background: #fff283;
+			}
+		}
+
+	}
+
+	.children {
+		background: #f4f4f4;
+		border-bottom: 1px solid #e9e9e9;
+
+		a {
+			border-bottom: none;
+			color: #999;
+			font-size: 13px;
+			letter-spacing: 0;
+			padding: 7px 20px;
+			text-transform: none;
+		}
+
 	}
 
 }

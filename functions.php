@@ -99,3 +99,8 @@ require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
  * We use some part of Hybrid Core to extends our themes.
  */
 require trailingslashit( get_template_directory() ) . 'inc/hybrid.php';
+
+/**
+ * Custom categories widget.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/classes/widget-categories.php';

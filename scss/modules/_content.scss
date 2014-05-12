@@ -4,11 +4,12 @@
 }
 
 .content-area {
+	@include pxrem(margin-left, -1px);
 	float: left;
 	width: 66%;
 
 	.has-left-sidebar & {
-		width: 49%;
+		width: 49.1%;
 	}
 
 }

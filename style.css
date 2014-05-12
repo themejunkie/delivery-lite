@@ -1443,11 +1443,13 @@ html[xmlns] .slides {
 }
 
 .content-area {
+  margin-left: -1px;
+  margin-left: -0.07692rem;
   float: left;
   width: 66%;
 }
 .has-left-sidebar .content-area {
-  width: 49%;
+  width: 49.1%;
 }
 
 .content-area {
@@ -1577,6 +1579,7 @@ html[xmlns] .slides {
   float: left;
   width: 17%;
   border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
 }
 .has-left-sidebar .widget-home .widget {
   border-right: 0;
@@ -1635,7 +1638,7 @@ html[xmlns] .slides {
   content: '';
   position: absolute;
   top: 50%;
-  left: 1.5em;
+  left: -0.7em;
   margin-top: -3px;
   height: 0;
   width: 0;
@@ -1682,6 +1685,54 @@ html[xmlns] .slides {
 .widget-footer a,
 .widget-footer a:visited {
   color: white;
+}
+
+/**
+ * Custom category widget.
+ */
+.widget-area .delivery-categories {
+  padding-bottom: 0;
+}
+.widget-area .delivery-categories li {
+  padding: 0;
+}
+.widget-area .delivery-categories li a::before {
+  border-left-color: transparent;
+}
+
+.delivery-categories li:hover {
+  background: none;
+}
+.delivery-categories li:hover a {
+  border-bottom-color: #ff0000;
+}
+.delivery-categories li:last-child a {
+  border-bottom: 0;
+}
+.delivery-categories li a {
+  border-bottom: 1px solid #e9e9e9;
+  color: #41B7D8;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.delivery-categories li a:hover {
+  background: #fff283;
+}
+.delivery-categories .children {
+  background: #f4f4f4;
+  border-bottom: 1px solid #e9e9e9;
+}
+.delivery-categories .children a {
+  border-bottom: none;
+  color: #999;
+  font-size: 13px;
+  letter-spacing: 0;
+  padding: 7px 20px;
+  text-transform: none;
 }
 
 /*------------------------------------*\
