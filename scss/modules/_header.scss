@@ -58,6 +58,10 @@
 
 }
 
+.site-logo {
+	@include pxrem(margin-top, 14px);
+}
+
 .header-item {
 	@extend .container;
 }

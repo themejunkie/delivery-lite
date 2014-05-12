@@ -13,6 +13,7 @@
 	.widget-home {
 		float: left;
 		width: 17%;
+		border-left: 1px solid $border-color;
 
 		.widget {
 			border-right: 0;
@@ -67,20 +68,26 @@
 	li {
 		@include pxrem(padding, 8px 20px 8px 30px);
 		position: relative;
+		
 		&:hover {
 			background-color: #ddf0f9;
 		}
-		&:before {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 1.5em;
-			margin-top: -3px;
-			height: 0;
-			width: 0;
-			border: 3px solid transparent;
-			border-left-color: $gray-darker;
+
+		a {
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 1.5em;
+				margin-top: -3px;
+				height: 0;
+				width: 0;
+				border: 3px solid transparent;
+				border-left-color: $gray-darker;
+			}
 		}
+
 	}
 
 }

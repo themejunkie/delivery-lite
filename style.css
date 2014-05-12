@@ -1172,6 +1172,11 @@ object {
   color: #777;
 }
 
+.site-logo {
+  margin-top: 14px;
+  margin-top: 1.07692rem;
+}
+
 /*------------------------------------*\
 	$NAVIGATIONS
 \*------------------------------------*/
@@ -1571,6 +1576,7 @@ html[xmlns] .slides {
 .has-left-sidebar .widget-home {
   float: left;
   width: 17%;
+  border-left: 1px solid #e9e9e9;
 }
 .has-left-sidebar .widget-home .widget {
   border-right: 0;
@@ -1622,7 +1628,10 @@ html[xmlns] .slides {
 .widget-area li:hover {
   background-color: #ddf0f9;
 }
-.widget-area li:before {
+.widget-area li a {
+  position: relative;
+}
+.widget-area li a:before {
   content: '';
   position: absolute;
   top: 50%;
