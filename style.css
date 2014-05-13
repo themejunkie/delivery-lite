@@ -42,9 +42,6 @@
  * - PAGINATIONS
  * - FOOTER
  *
- * PAGES
- * - HOMEPAGE
- *
  * PLUGINS
  * STATE
  * GLOBAL
@@ -1443,12 +1440,12 @@ html[xmlns] .slides {
 }
 
 .content-area {
-  margin-left: -1px;
-  margin-left: -0.07692rem;
   float: left;
   width: 66%;
 }
 .has-left-sidebar .content-area {
+  margin-left: -1px;
+  margin-left: -0.07692rem;
   width: 49.1%;
 }
 
@@ -1608,6 +1605,14 @@ html[xmlns] .slides {
   padding: 10px 20px;
   padding: 0.76923rem 1.53846rem;
 }
+.widget-area .widget > select,
+.widget-area .widget > form {
+  margin: 10px 20px;
+  margin: 0.76923rem 1.53846rem;
+}
+.widget-area .widget select {
+  max-width: 100%;
+}
 .widget-area .widget-title {
   margin: 0 0 10px 0;
   margin: 0 0 0.76923rem 0;
@@ -1634,7 +1639,7 @@ html[xmlns] .slides {
 .widget-area li a {
   position: relative;
 }
-.widget-area li a:before {
+.widget-area li a:first-child::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -1733,6 +1738,46 @@ html[xmlns] .slides {
   letter-spacing: 0;
   padding: 7px 20px;
   text-transform: none;
+}
+
+/**
+ * Recent Comment Widget
+ */
+.widget-area .widget_recent_comments li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1.5em;
+  margin-top: -3px;
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  border-left-color: #999999;
+}
+.widget-area .widget_recent_comments li a::before {
+  border-left-color: transparent;
+}
+
+/**
+ * Search Widget
+ */
+.widget_search .searchform {
+  width: 100%;
+  float: none;
+}
+.widget_search .searchform div {
+  float: none;
+}
+.widget_search .searchform .field {
+  width: 86%;
+  border-color: #e9e9e9;
+}
+
+/**
+ * Nav Menu Widget
+ */
+.widget-area .widget_nav_menu div {
+  padding: 0;
 }
 
 /*------------------------------------*\
@@ -1903,9 +1948,6 @@ html[xmlns] .slides {
   display: block;
 }
 
-/*------------------------------------*\
-	$HOMEPAGE
-\*------------------------------------*/
 /*------------------------------------*\
 	$PLUGINS
 \*------------------------------------*/

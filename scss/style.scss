@@ -47,9 +47,6 @@
  * - PAGINATIONS
  * - FOOTER
  *
- * PAGES
- * - HOMEPAGE
- *
  * PLUGINS
  * STATE
  * GLOBAL
@@ -134,11 +131,6 @@
 	$FOOTER
 \*------------------------------------*/
 @import "modules/footer";
-
-/*------------------------------------*\
-	$HOMEPAGE
-\*------------------------------------*/
-@import "pages/homepage";
 
 /*------------------------------------*\
 	$PLUGINS

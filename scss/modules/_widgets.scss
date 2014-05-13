@@ -47,6 +47,15 @@
 			@include pxrem(padding, 10px 20px);
 		}
 
+		> select,
+		> form {
+			@include pxrem(margin, 10px 20px);
+		}
+
+		select {
+			max-width: 100%;
+		}
+
 	}
 
 	.widget-title {
@@ -76,16 +85,18 @@
 
 		a {
 			position: relative;
-			&:before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: -0.7em;
-				margin-top: -3px;
-				height: 0;
-				width: 0;
-				border: 3px solid transparent;
-				border-left-color: $gray-darker;
+			&:first-child {
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: -0.7em;
+					margin-top: -3px;
+					height: 0;
+					width: 0;
+					border: 3px solid transparent;
+					border-left-color: $gray-darker;
+				}
 			}
 		}
 
@@ -193,6 +204,63 @@
 			text-transform: none;
 		}
 
+	}
+
+}
+
+/**
+ * Recent Comment Widget
+ */
+.widget-area {
+
+	.widget_recent_comments {
+
+		li {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 1.5em;
+				margin-top: -3px;
+				height: 0;
+				width: 0;
+				border: 3px solid transparent;
+				border-left-color: $gray-darker;
+			}
+			a::before {
+				border-left-color: transparent;
+			}
+		}
+	}
+
+}
+
+/**
+ * Search Widget
+ */
+.widget_search {
+
+	.searchform {
+		width: 100%;
+		float: none;
+		div {
+			float: none;
+		}
+		.field {
+			width: 86%;
+			border-color: $border-color;
+		}
+	}
+
+}
+
+/**
+ * Nav Menu Widget
+ */
+.widget-area .widget_nav_menu {
+
+	div {
+		padding: 0;
 	}
 
 }
