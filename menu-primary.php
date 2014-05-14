@@ -1,6 +1,6 @@
 <?php if ( has_nav_menu( 'primary' ) ) : // Check if there's a menu assigned to the 'primary' location. ?>
 
-	<nav id="site-navigation" class="main-navigation" role="navigation">
+	<nav id="primary-navigation" class="main-navigation" role="navigation">
 		<div class="navigation-item">
 
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'delivery' ); ?></a>

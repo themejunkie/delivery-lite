@@ -15,6 +15,9 @@
 <div id="page" class="hfeed site">
 
 	<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
+	
+	<!-- Mobile navigation -->
+	<a href="#primary-navigation" class="mobile-menu"><div class="dashicons dashicons-menu"></div></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-item">

@@ -4,19 +4,30 @@
 }
 
 .content-area {
-	float: left;
-	width: 66%;
-
-	.has-left-sidebar & {
-		@include pxrem(margin-left, -1px);
-		width: 49.1%;
-	}
-
-}
-
-.content-area {
 	@include pxrem(padding, 20px 20px 30px 20px);
 	border: 1px solid $border-color;
+
+	@include min-screen(320px) {
+		@include pxrem(margin-bottom, 30px);
+		width: 100%;
+		float: none;
+	}
+
+	@include min-screen(768px) {
+		width: 66%;
+		margin-bottom: 0;
+		float: left;
+	}
+
+	.has-left-sidebar & {
+
+		@include min-screen(1024px) {
+			@include pxrem(margin-left, -1px);
+			width: 49.1%;
+		}
+
+	}
+
 }
 
 .hentry {

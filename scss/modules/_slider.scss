@@ -118,6 +118,14 @@ html[xmlns] .slides {
 
 #carousel {
 
+	@include min-screen(320px) {
+		display: none;
+	}
+
+	@include min-screen(480px) {
+		display: block;
+	}
+
 	.slides {
 		li {
 			@extend %button;

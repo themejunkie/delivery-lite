@@ -5,6 +5,18 @@
 // Accent navigation color
 $color-nav: #2aa4cf;
 
+#primary-menu {
+
+	@include min-screen(320px) {
+		display: none;
+	}
+
+	@include min-screen(601px) {
+		display: block;
+	}
+
+}
+
 .main-navigation {
 	@extend %clearfix;
 	box-shadow: rgba($black, .2) 0px 2px 2px -1px;
@@ -47,6 +59,22 @@ $color-nav: #2aa4cf;
 
 }
 
+.mobile-menu {
+	
+	.dashicons {
+		@include font-size(40);
+		color: $black;
+	}
+
+	@include min-screen(320px) {
+		display: block;
+	}
+
+	@include min-screen(601px) {
+		display: none;
+	}
+}
+
 /**
  * Secondary navigation
  */
@@ -61,6 +89,14 @@ $color-nav: #2aa4cf;
 	@extend %button;
 	border: 1px solid $border-color;
 	border-bottom-color: $gray-light;
+
+	@include min-screen(320px) {
+		display: none;
+	}
+
+	@include min-screen(601px) {
+		display: block;
+	}
 
 	.sfHover {
 		background: $white-darker;
@@ -106,6 +142,20 @@ $color-nav: #2aa4cf;
 				text-shadow: none;
 			}
 		}
+	}
+
+}
+
+.tinynav {
+	@include pxrem(margin-bottom, 14px);
+	width: 100%;
+
+	@include min-screen(320px) {
+		display: block;
+	}
+
+	@include min-screen(601px) {
+		display: none;
 	}
 
 }

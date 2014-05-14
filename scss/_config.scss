@@ -2,8 +2,8 @@
 // -------------------------------------------------
 
 // Dependencies
-@import 'bourbon';
 @import "susy";
+@import 'bourbon';
 
 // Variables
 @import "helpers/font-stacks";
@@ -11,6 +11,7 @@
 
 // Mixins
 @import "helpers/mixins";
+@import "helpers/media-queries";
 
 // Typography Variables
 // -------------------------------------------------

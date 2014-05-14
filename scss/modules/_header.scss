@@ -6,6 +6,14 @@
 	position: relative;
 	color: #dcdcdc;
 
+	@include min-screen(320px) {
+		display: none;
+	}
+
+	@include min-screen(601px) {
+		display: block;
+	}
+
 	div {
 		position: relative;
 		float: right;
@@ -42,7 +50,18 @@
 }
 
 .site-branding {
-	@include span(3 of 12);
+
+	@include min-screen(320px) {
+		@include span(12 of 12 last);
+		@include pxrem(margin-bottom, 20px);
+		text-align: center;
+	}
+
+	@include min-screen(800px) {
+		@include span(3 of 12);
+		margin-bottom: 0;
+		text-align: left;
+	}
 
 	.site-title {
 		@include font-size(30);

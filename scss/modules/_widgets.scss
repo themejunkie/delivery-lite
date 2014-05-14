@@ -2,7 +2,15 @@
  * Header sidebar
  */
 .widget-header {
-	@include span(9 of 12 last);
+
+	@include min-screen(320px) {
+		@include span(12 of 12 last);
+	}
+
+	@include min-screen(800px) {
+		@include span(9 of 12 last);
+	}
+
 }
 
 /**
@@ -19,6 +27,15 @@
 		.widget {
 			border-right: 0;
 		}
+
+		@include min-screen(320px) {
+			display: none;
+		}
+
+		@include min-screen(1024px) {
+			display: block;
+		}
+
 	}
 
 }
@@ -27,8 +44,17 @@
  * Primary sidebar
  */
 .widget-primary {
-	float: right;
-	width: 34%;
+
+	@include min-screen(600px) {
+		width: 100%;
+		float: none;
+	}
+
+	@include min-screen(768px) {
+		width: 34%;
+		float: right;
+	}
+
 }
 
 .widget-area {
@@ -117,11 +143,30 @@
 	color: $white;
 
 	.widget {
-		@include span(3 of 12);
-		@include font-size(12);
-		&:nth-child(4n) {
-			@include last;
+
+		@include min-screen(320px) {
+			@include span(12 of 12 last);
 		}
+
+		@include min-screen(600px) {
+			@include span(6 of 12);
+			&:nth-child(2n) {
+				@include last;
+			}
+		}
+		
+		@include min-screen(800px) {
+			@include span(3 of 12);
+			@include font-size(12);
+			&:nth-child(2n) {
+				margin-right: gutter(12);
+				float: left;
+			}
+			&:nth-child(4n) {
+				@include last;
+			}
+		}
+
 		li {
 			@include pxrem(padding, 2px 0 2px 0);
 		}

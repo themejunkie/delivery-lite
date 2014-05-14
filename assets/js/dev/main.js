@@ -1,5 +1,12 @@
 var $ = jQuery.noConflict();
 $(document).ready(function(){
+
+	/**
+	 * mmenu
+	 */
+	$('#primary-navigation').clone().attr('id', 'primary-menu').insertBefore('#primary-navigation');
+	$('#primary-navigation ul').removeClass('sf-menu');
+	$('#primary-navigation').mmenu();
 	
 	/**
 	 * Superfish + Supersubs
@@ -11,17 +18,19 @@ $(document).ready(function(){
 	}).superfish({
 		delay:      50,
 		animation:  {opacity:'show', height:'show'},
-		speed:      'fast',
+		speed:      'fast'
+	});
+
+	/**
+	 * Turn navigation into mobile navigation
+	 */
+	$("#secondary-navigation .menu-secondary-items").tinyNav({
+		active: 'current-menu-item'
 	});
 
 });
 
 $(window).load(function() {
-
-	/**
-	 * Equal Heights
-	 */
-	// $('#carousel li').equalHeights();
 
 	$(document).imagesLoaded(function(){
 
@@ -49,4 +58,5 @@ $(window).load(function() {
 		});
 
 	});
+
 });

@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 					style: 'expanded',
 					require: [
 						'susy',
-						'bourbon'
+						'bourbon',
 					]
 				},
 				files: {

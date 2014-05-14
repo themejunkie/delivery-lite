@@ -1,6 +1,6 @@
 <?php if ( has_nav_menu( 'secondary' ) ) : // Check if there's a menu assigned to the 'secondary' location. ?>
 
-	<nav id="site-navigation" class="secondary-navigation" role="navigation">
+	<nav id="secondary-navigation" class="secondary-navigation" role="navigation">
 		<div class="navigation-item">
 
 			<?php wp_nav_menu(
