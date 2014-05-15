@@ -163,7 +163,7 @@ function delivery_featured_content() {
 	}
 	
 	// Get the user selected tag for the featured posts.
-	$tag = get_theme_mod( 'delivery_featured_posts' );
+	$tag = get_theme_mod( 'delivery_featured_posts', 'featured' );
 
 	// Check if the tag is not empty.
 	if ( empty( $tag ) ) {
