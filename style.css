@@ -243,7 +243,6 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -256,6 +255,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -299,7 +299,6 @@ th {
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -324,11 +323,6 @@ body {
 /**
  * Selection Color.
  */
-::-moz-selection {
-  background: black;
-  color: white;
-  text-shadow: none;
-}
 ::selection {
   background: black;
   color: white;
@@ -388,7 +382,6 @@ blockquote, th, td {
  * Set link colors.
  */
 a {
-  -webkit-transition: all 200ms ease-in-out 0s;
   transition: all 200ms ease-in-out 0s;
   color: #2aa4cf;
   text-decoration: none;
@@ -758,7 +751,6 @@ input[type="week"] {
   padding: 0.38462rem;
   font-size: 13px;
   font-size: 1rem;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background-clip: padding-box;
   border-radius: 0;
@@ -799,9 +791,6 @@ select[disabled] optgroup,
 textarea[disabled],
 a.button_disabled {
   box-shadow: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   color: #888;
   cursor: default;
@@ -823,7 +812,6 @@ textarea.placeholder_text {
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
-  -webkit-transition: opacity 0.5s 0.5s ease;
   transition: opacity 0.5s 0.5s ease;
   opacity: 0;
 }
@@ -857,6 +845,7 @@ select[size="1"] {
   }
 
   ::-webkit-validation-bubble-message {
+    -webkit-box-shadow: none;
     box-shadow: none;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666666), color-stop(1, black));
     border: 0;
@@ -1071,7 +1060,6 @@ object {
   font-size: 0.92308rem;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.7);
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: white;
   line-height: 1.5;
@@ -1152,7 +1140,6 @@ object {
   padding-left: 1.92308rem;
   width: 90px;
   width: 6.92308rem;
-  -webkit-transition: width 400ms ease-in-out 0s;
   transition: width 400ms ease-in-out 0s;
   border-radius: 3px;
   border-color: transparent;
@@ -1444,7 +1431,6 @@ html[xmlns] .slides {
 
 .flex-viewport {
   max-height: 2000px;
-  -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
@@ -2191,9 +2177,7 @@ html[xmlns] .slides {
 .mm-fixed-top,
 .mm-fixed-bottom,
 .mm-menu.mm-horizontal > .mm-panel {
-  -webkit-transition: none 0.4s ease;
   transition: none 0.4s ease;
-  -webkit-transition-property: top, right, bottom, left, border;
   transition-property: top, right, bottom, left, border;
 }
 
@@ -2230,6 +2214,7 @@ html.mm-opening #mm-blocker {
 
 html.mm-opened .mm-page,
 .mm-menu > .mm-panel {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -2467,7 +2452,9 @@ html.mm-blocking #mm-blocker {
   position: absolute;
   bottom: 50%;
   -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -2503,7 +2490,9 @@ html.mm-blocking #mm-blocker {
 
 .mm-menu.mm-vertical .mm-list > li.mm-opened > a.mm-subopen:after {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 16px;
   right: 16px;
@@ -2623,7 +2612,6 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"], .menu-secondary-items, #carousel .slides li, .pagination .page-numbers {
   background: #fbfbfb;
-  background: -webkit-linear-gradient(top, #fbfbfb, #eeeeee);
   background: linear-gradient(to bottom, #fbfbfb, #eeeeee);
   text-shadow: 0 1px 0 white;
 }

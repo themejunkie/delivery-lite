@@ -36,7 +36,11 @@ module.exports = function(grunt) {
 			},
 			prod: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					require: [
+						'susy',
+						'bourbon',
+					]
 				},
 				files: {
 					'../style-min.css': '../scss/style.scss',
