@@ -1,2 +1,8 @@
+1.0.1 - 06/01/2014
+* Change screenshot
+* Fix undefined index in slider if user use child theme
+* Add favicon setting output
+* Fix slider image stretched when home widget inactive
+
 1.0.0 - 5/15/2014
 * Initial release

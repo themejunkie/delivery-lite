@@ -48,6 +48,7 @@ function delivery_posted_on() {
 	echo delivery_get_posted_on();
 }
 
+if ( ! function_exists( 'delivery_site_branding' ) ) :
 /**
  * Site branding for the site.
  * 
@@ -75,6 +76,7 @@ function delivery_site_branding() {
 	}
 
 }
+endif;
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -149,6 +151,7 @@ function delivery_post_thumbnail() {
 <?php
 }
 
+if ( ! function_exists( 'delivery_featured_content' ) ) :
 /**
  * Sets up the featured posts based on user selected tag.
  *
@@ -250,6 +253,7 @@ function delivery_featured_content() {
 	}
 
 }
+endif;
 
 /**
  * Flush out the transients used in delivery_featured_content.
@@ -282,7 +286,7 @@ function delivery_pre_get_posts( $query ) {
 	}
 
 	// Get the tag.
-	$featured = get_theme_mod( 'delivery_featured_posts' );
+	$featured = get_theme_mod( 'delivery_featured_posts', 'featured' );
 
 	// Bail if no featured posts.
 	if ( ! $featured ) {
@@ -293,7 +297,9 @@ function delivery_pre_get_posts( $query ) {
 	$exclude = get_term_by( 'name', $featured, 'post_tag' );
 
 	// Exclude the main query.
-	$query->set( 'tag__not_in', $exclude->term_id );
+	if ( ! empty( $exclude ) ) {
+		$query->set( 'tag__not_in', $exclude->term_id );
+	}
 
 }
 add_action( 'pre_get_posts', 'delivery_pre_get_posts' );

@@ -27,7 +27,7 @@ add_action( 'widgets_init', 'delivery_register_sidebars' );
 function delivery_register_image_sizes() {
 	add_image_size( 'delivery-post'    , 110, 100, true );
 	add_image_size( 'delivery-archive' , 150, 150, true );
-	add_image_size( 'delivery-featured', 438, 250, true );
+	add_image_size( 'delivery-featured', 605, 345, true );
 	add_image_size( 'delivery-thumb'   , 90 , 50 , true );
 }
 

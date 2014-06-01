@@ -15,6 +15,9 @@ add_action( 'customize_register', 'delivery_customize_register' );
 // Load javascript for the Customizer.
 add_action( 'customize_preview_init', 'delivery_customize_preview_js' );
 
+// Hook favicon into 'wp_head'.
+add_action( 'wp_head', 'delivery_favicon_output', 5 );
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -103,4 +106,15 @@ function delivery_customize_register( $wp_customize ) {
  */
 function delivery_customize_preview_js() {
 	wp_enqueue_script( 'delivery_customizer', trailingslashit( get_template_directory_uri() ) . 'assets/js/customizer.min.js', array( 'customize-preview' ), null, true );
+}
+
+/**
+ * Favicon output.
+ *
+ * @since 1.0.0
+ */
+function delivery_favicon_output() {
+	if ( get_theme_mod( 'delivery_favicon' ) ) {
+		echo '<link href="' . esc_url( get_theme_mod( 'delivery_favicon' ) ) . '" rel="icon">' . "\n";
+	}
 }
