@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 		uglify: {
 			minify: {
 				files: {
-					'assets/js/<%= pkg.name %>.min.js': ['assets/js/plugins.js','assets/js/main.js']
+					'assets/js/delivery.min.js': ['assets/js/plugins.js','assets/js/main.js']
 				}
 			}
 		},
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 				"force": true
 			},
 			beforeconcat: ['assets/js/plugins.js', 'assets/js/main.js'],
-			afterconcat: ['assets/js/<%= pkg.name %>.min.js']
+			afterconcat: ['assets/js/delivery.min.js']
 		},
 
 		// Compile our sass.
