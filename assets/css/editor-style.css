@@ -1,9 +1,8 @@
-@import url( '//fonts.googleapis.com/css?family=Droid+Sans:400,700' );
-
+@import url("//fonts.googleapis.com/css?family=Droid+Sans:400,700");
 /* Styles specific to the editor. */
 body#tinymce {
-	background-color: #fff;
-	margin: 0 auto;
-	padding: 1.5rem 1.5rem 0;
-	border: none;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0;
+  border: none;
 }
