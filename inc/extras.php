@@ -11,30 +11,6 @@
  * @since      1.0.0
  */
 
-// wp_nav_menu() fallback.
-add_filter( 'wp_page_menu_args', 'delivery_page_menu_args' );
-
-// Custom classes to the body classes.
-add_filter( 'body_class', 'delivery_body_classes' );
-
-// Filters wp_title.
-add_filter( 'wp_title', 'delivery_wp_title', 10, 2 );
-
-// Sets the authordata global when viewing an author archive.
-add_action( 'wp', 'delivery_setup_author' );
-
-// Generates the relevant template info.
-add_action( 'wp_head', 'delivery_meta_template', 10 );
-
-// Removes default styles set by WordPress recent comments widget.
-add_action( 'widgets_init', 'delivery_remove_recent_comments_style' );
-
-// Change the excerpt length.
-add_filter( 'excerpt_length', 'delivery_excerpt_length', 999 );
-
-// Change the excerpt more string.
-add_filter( 'excerpt_more', 'delivery_excerpt_more' );
-
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -46,6 +22,7 @@ function delivery_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
+add_filter( 'wp_page_menu_args', 'delivery_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -67,39 +44,54 @@ function delivery_body_classes( $classes ) {
 
 	return $classes;
 }
+add_filter( 'body_class', 'delivery_body_classes' );
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @since  1.0.0
- * @param  string $title Default title text for current view.
- * @param  string $sep Optional separator.
- * @return string The filtered title.
- */
-function delivery_wp_title( $title, $sep ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	/**
+	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+	 *
+	 * @param string $title Default title text for current view.
+	 * @param string $sep Optional separator.
+	 * @return string The filtered title.
+	 */
+	function delivery_wp_title( $title, $sep ) {
+		if ( is_feed() ) {
+			return $title;
+		}
 
-	if ( is_feed() ) {
+		global $page, $paged;
+
+		// Add the blog name
+		$title .= get_bloginfo( 'name', 'display' );
+
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) ) {
+			$title .= " $sep $site_description";
+		}
+
+		// Add a page number if necessary:
+		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+			$title .= " $sep " . sprintf( __( 'Page %s', 'delivery' ), max( $paged, $page ) );
+		}
+
 		return $title;
 	}
-	
-	global $page, $paged;
+	add_filter( 'wp_title', 'delivery_wp_title', 10, 2 );
 
-	// Add the blog name
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
+	/**
+	 * Title shim for sites older than WordPress 4.1.
+	 *
+	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	 * @todo Remove this function when WordPress 4.3 is released.
+	 */
+	function delivery_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
 	}
-
-	// Add a page number if necessary:
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'delivery' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
+	add_action( 'wp_head', 'delivery_render_title' );
+endif;
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -121,6 +113,7 @@ function delivery_setup_author() {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
+add_action( 'wp', 'delivery_setup_author' );
 
 /**
  * Generates the relevant template info. Adds template meta with theme version. Uses the theme 
@@ -134,6 +127,7 @@ function delivery_meta_template() {
 
 	echo apply_filters( 'delivery_meta_template', $template );
 }
+add_action( 'wp_head', 'delivery_meta_template', 10 );
 
 /**
  * Removes default styles set by WordPress recent comments widget.
@@ -144,6 +138,7 @@ function delivery_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
+add_action( 'widgets_init', 'delivery_remove_recent_comments_style' );
 
 /**
  * Control the excerpt length.
@@ -160,6 +155,7 @@ function delivery_excerpt_length( $length ) {
 	}
 
 }
+add_filter( 'excerpt_length', 'delivery_excerpt_length', 999 );
 
 /**
  * Change the excerpt more string.
@@ -170,3 +166,4 @@ function delivery_excerpt_length( $length ) {
 function delivery_excerpt_more( $more ) {
 	return '...';
 }
+add_filter( 'excerpt_more', 'delivery_excerpt_more' );
