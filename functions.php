@@ -68,6 +68,9 @@ function delivery_theme_setup() {
 		array( 'comment-list', 'search-form', 'comment-form', 'gallery', 'caption' )
 	);
 
+	// This theme uses its own gallery styles.
+	add_filter( 'use_default_gallery_style', '__return_false' );
+
 }
 endif; // delivery_theme_setup
 add_action( 'after_setup_theme', 'delivery_theme_setup' );
@@ -132,6 +135,25 @@ function delivery_register_sidebars() {
 }
 endif; // delivery_register_sidebars
 add_action( 'widgets_init', 'delivery_register_sidebars' );
+
+/**
+ * Register Droid Sans Google fonts.
+ *
+ * @since  1.0.0
+ * @return string
+ */
+function delivery_droid_sans_font_url() {
+	$droid_sans_font_url = '';
+
+	/* translators: If there are characters in your language that are not supported
+	   by Droid Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Droid Sans font: on or off', 'delivery' ) ) {
+
+		$droid_sans_font_url = add_query_arg( 'family', urlencode( 'Droid Sans:400,700' ), "//fonts.googleapis.com/css" );
+	}
+
+	return $droid_sans_font_url;
+}
 
 /**
  * Custom template tags for this theme.
