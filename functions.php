@@ -12,21 +12,20 @@
  * @since      1.0.0
  */
 
-// Do theme setup on the 'after_setup_theme' hook.
-add_action( 'after_setup_theme', 'delivery_theme_setup' );
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 605; /* pixels */
+}
 
+if ( ! function_exists( 'delivery_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * @since  1.0.0
  */
 function delivery_theme_setup() {
-
-	// Set the content width based on the theme's design and stylesheet.
-	global $content_width;
-	if ( ! isset( $content_width ) ) {
-		$content_width = 605; /* pixels */
-	}
 
 	// Make the theme available for translation.
 	load_theme_textdomain( 'delivery', trailingslashit( get_template_directory() ) . 'languages' );
@@ -37,6 +36,12 @@ function delivery_theme_setup() {
 	// Enable support for Post Thumbnails.
 	add_theme_support( 'post-thumbnails' );
 
+	// Declare image sizes.
+	add_image_size( 'delivery-post'    , 110, 100, true );
+	add_image_size( 'delivery-archive' , 150, 150, true );
+	add_image_size( 'delivery-featured', 605, 345, true );
+	add_image_size( 'delivery-thumb'   , 90 , 50 , true );
+
 	// Register custom navigation menu.
 	register_nav_menus(
 		array(
@@ -46,7 +51,7 @@ function delivery_theme_setup() {
 	);
 
 	// Add custom stylesheet file to the TinyMCE visual editor.
-	add_editor_style( trailingslashit( get_template_directory_uri() ) . 'assets/css/editor-style.css' );
+	add_editor_style( array( 'assets/css/editor-style.css' ) );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support(
@@ -64,11 +69,69 @@ function delivery_theme_setup() {
 	);
 
 }
+endif; // delivery_theme_setup
+add_action( 'after_setup_theme', 'delivery_theme_setup' );
 
+if ( ! function_exists( 'delivery_register_sidebars' ) ) :
 /**
- * Sets up custom filters and actions for the theme.
+ * Registers sidebars.
+ *
+ * @since 1.0.0
+ * @link  http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-require trailingslashit( get_template_directory() ) . 'inc/functions.php';
+function delivery_register_sidebars() {
+
+	register_sidebar(
+		array(
+			'name'          => _x( 'Header', 'sidebar', 'delivery' ),
+			'id'            => 'header',
+			'description'   => __( 'An optional widget area for your site header.', 'delivery' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => _x( 'Primary', 'sidebar', 'delivery' ),
+			'id'            => 'primary',
+			'description'   => __( 'The main sidebar, appears on posts and pages.', 'delivery' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => _x( 'Home', 'sidebar', 'delivery' ),
+			'id'            => 'home',
+			'description'   => __( 'Secondary(left) sidebar, it only displayed on home page.', 'delivery' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => _x( 'Footer', 'sidebar', 'delivery' ),
+			'id'            => 'footer',
+			'description'   => __( 'The footer sidebar, appears on the footer of your site.', 'delivery' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	
+}
+endif; // delivery_register_sidebars
+add_action( 'widgets_init', 'delivery_register_sidebars' );
 
 /**
  * Custom template tags for this theme.
