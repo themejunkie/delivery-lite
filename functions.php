@@ -183,7 +183,8 @@ require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
 /**
  * We use some part of Hybrid Core to extends our themes.
  */
-require trailingslashit( get_template_directory() ) . 'inc/hybrid.php';
+require trailingslashit( get_template_directory() ) . 'inc/hybrid/breadcrumb-trail.php';
+require trailingslashit( get_template_directory() ) . 'inc/hybrid/loop-pagination.php';
 
 /**
  * Custom categories widget.
