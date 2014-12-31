@@ -167,6 +167,7 @@ function delivery_featured_content() {
 	
 	// Get the user selected tag for the featured posts.
 	$tag = get_theme_mod( 'delivery_featured_posts', 'featured' );
+	$num = get_theme_mod( 'delivery_featured_posts_num', 4 );
 
 	// Check if the tag is not empty.
 	if ( empty( $tag ) ) {
@@ -180,26 +181,25 @@ function delivery_featured_content() {
 		// Posts query arguments.
 		$args = array(
 			'post_type'      => 'post',
-			'posts_per_page' => 4,
+			'posts_per_page' => absint( $num ),
 			'tag'            => $tag
 		);
 
 		// The post query
-		$featured = get_posts( $args );
+		$featured = new WP_Query( $args );
 
 		// Store the transient.
 		set_transient( 'delivery_featured_posts', $featured );
 	}
 
 	// Check if the post(s) exist.
-	if ( $featured ) :
+	if ( $featured->have_posts() ) :
 
 		$html = '<div class="featured-slider">';
 
 			$html .= '<div id="slider" class="flexslider">';
 				$html .= '<ul class="slides">';
-				foreach ( $featured as $post ) :
-					setup_postdata( $post );
+				while ( $featured->have_posts() ) : $featured->the_post();
 
 					$html .= '<li>';
 						if ( has_post_thumbnail( $post->ID ) ) {
@@ -212,7 +212,7 @@ function delivery_featured_content() {
 						$html .= '<div class="entry-summary">' . get_the_excerpt() . '</div>';
 					$html .= '</li>';
 
-				endforeach;
+				endwhile;
 
 				// Restore original post data.
 				wp_reset_postdata();
@@ -222,8 +222,7 @@ function delivery_featured_content() {
 
 			$html .= '<div id="carousel" class="flexslider">';
 				$html .= '<ul class="slides">';
-				foreach ( $featured as $post ) :
-					setup_postdata( $post );
+				while ( $featured->have_posts() ) : $featured->the_post();
 
 					$html .= '<li>';
 						$html .= '<div>';
@@ -234,7 +233,7 @@ function delivery_featured_content() {
 						$html .= '</div>';
 					$html .= '</li>';
 
-				endforeach;
+				endwhile;
 
 				// Restore original post data.
 				wp_reset_postdata();

@@ -88,6 +88,26 @@ function delivery_customize_register( $wp_customize ) {
 			)
 		);
 
+	// Featured Posts setting.
+	$wp_customize->add_setting(
+		'delivery_featured_posts_num',
+		array(
+			'default'           => 4,
+			'sanitize_callback' => 'absint',
+			'capability'        => 'edit_theme_options'
+		)
+	);
+
+		// Featured Posts control.
+		$wp_customize->add_control(
+			'delivery_featured_posts_num_control',
+			array(
+				'label'    => esc_html__( 'Number of featured posts to show.', 'delivery' ),
+				'section'  => 'delivery_settings',
+				'settings' => 'delivery_featured_posts_num'
+			)
+		);
+
 }
 add_action( 'customize_register', 'delivery_customize_register' );
 

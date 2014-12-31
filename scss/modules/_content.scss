@@ -101,6 +101,8 @@
 
 .entry-content {
 	@include pxrem(margin-bottom, 30px);
+	@include font-size(15);
+	line-height: 1.5em;
 }
 
 .entry-footer {

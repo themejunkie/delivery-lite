@@ -145,22 +145,42 @@ endif; // delivery_register_sidebars
 add_action( 'widgets_init', 'delivery_register_sidebars' );
 
 /**
- * Register Droid Sans Google fonts.
+ * Register Open Sans Google fonts.
  *
  * @since  1.0.0
  * @return string
  */
-function delivery_droid_sans_font_url() {
-	$droid_sans_font_url = '';
+function delivery_open_sans_font_url() {
+	$open_sans_font_url = '';
 
 	/* translators: If there are characters in your language that are not supported
-	   by Droid Sans, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Droid Sans font: on or off', 'delivery' ) ) {
+	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'delivery' ) ) {
+		$subsets = 'latin,latin-ext';
 
-		$droid_sans_font_url = add_query_arg( 'family', urlencode( 'Droid Sans:400,700' ), "//fonts.googleapis.com/css" );
+		/* translators: To add an additional Open Sans character subset specific to your language,
+		 * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
+		 */
+		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'delivery' );
+
+		if ( 'cyrillic' == $subset ) {
+			$subsets .= ',cyrillic,cyrillic-ext';
+		} elseif ( 'greek' == $subset ) {
+			$subsets .= ',greek,greek-ext';
+		} elseif ( 'vietnamese' == $subset ) {
+			$subsets .= ',vietnamese';
+		}
+
+		$query_args = array(
+			'family' => urlencode( 'Open Sans:300italic,400italic,600italic,700italic,300,400,600,700' ),
+			'subset' => urlencode( $subsets ),
+		);
+
+		$open_sans_font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
-	return $droid_sans_font_url;
+	return $open_sans_font_url;
 }
 
 /**

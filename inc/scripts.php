@@ -19,7 +19,7 @@
 function delivery_enqueue() {
 
 	// Load google fonts.
-	wp_enqueue_style( 'delivery-font', delivery_droid_sans_font_url(), array(), null );
+	wp_enqueue_style( 'delivery-font', delivery_open_sans_font_url(), array(), null );
 
 	// if WP_DEBUG and/or SCRIPT_DEBUG turned on, load the unminified styles & script.
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
