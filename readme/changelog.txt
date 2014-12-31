@@ -1,3 +1,11 @@
+1.0.2 - 31/12/2014
+* Code re-factored
+* Added secondary widgets
+* Added schema.org support
+* WordPress 4.1 support
+* Uses WordPress 4.1 new theme functions
+* Change Droid Sans to Open sans
+
 1.0.1 - 06/01/2014
 * Change screenshot
 * Fix undefined index in slider if user use child theme
