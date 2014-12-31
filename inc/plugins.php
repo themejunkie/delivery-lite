@@ -12,7 +12,6 @@
 // Include the TGM_Plugin_Activation class.
 require trailingslashit( get_template_directory() ) . 'inc/classes/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'delivery_register_plugins' );
 /**
  * Register required and recommended plugins.
  *
@@ -62,3 +61,4 @@ function delivery_register_plugins() {
 	tgmpa( $plugins, $config );
 
 }
+add_action( 'tgmpa_register', 'delivery_register_plugins' );
