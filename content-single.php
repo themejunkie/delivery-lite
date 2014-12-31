@@ -1,7 +1,7 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php hybrid_attr( 'post' ); ?>>
 	
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title" ' . hybrid_get_attr( 'entry-title' ) . '>', '</h1>' ); ?>
 
 		<div class="entry-meta">
 			<?php delivery_posted_on(); ?>
@@ -12,7 +12,7 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content" <?php hybrid_attr( 'entry-content' ); ?>>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -28,7 +28,7 @@
 			$categories_list = get_the_category_list( __( ', ', 'delivery' ) );
 			if ( $categories_list && delivery_categorized_blog() ) :
 		?>
-			<span class="cat-links">
+			<span class="cat-links" <?php hybrid_attr( 'entry-terms', 'category' ); ?>>
 				<?php printf( __( 'Posted in: %1$s', 'delivery' ), $categories_list ); ?>
 			</span>
 		<?php endif; // End if categories ?>
@@ -38,7 +38,7 @@
 			$tags_list = get_the_tag_list( '', __( ', ', 'delivery' ) );
 			if ( $tags_list ) :
 		?>
-			<span class="tags-links">
+			<span class="tags-links" <?php hybrid_attr( 'entry-terms', 'post_tag' ); ?>>
 				<?php printf( __( 'Tagged: %1$s', 'delivery' ), $tags_list ); ?>
 			</span>
 		<?php endif; // End if $tags_list ?>

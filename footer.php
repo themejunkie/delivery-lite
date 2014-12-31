@@ -1,6 +1,6 @@
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo" <?php hybrid_attr( 'footer' ); ?>>
 		<div class="footer-item">
 
 			<?php get_sidebar( 'footer' ); // Loads the sidebar-footer.php template. ?>

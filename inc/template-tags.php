@@ -17,7 +17,7 @@ if ( ! function_exists( 'delivery_get_posted_on' ) ) :
  * @since 1.0.0
  */
 function delivery_get_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published" datetime="%1$s" ' . hybrid_get_attr( 'entry-published' ) . '>%2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -29,7 +29,7 @@ function delivery_get_posted_on() {
 			esc_url( get_permalink() ),
 			$time_string
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+		sprintf( '<span class="author vcard" ' . hybrid_get_attr( 'entry-author' ) . '><a class="url fn n" href="%1$s" itemprop="url"><span itemprop="name">%2$s</span></a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		)
@@ -63,16 +63,16 @@ function delivery_site_branding() {
 
 	// Check if logo available, then display it.
 	if ( $logo ) {
-		echo '<div class="site-logo">' . "\n";
-			echo '<a href="' . esc_url( get_home_url() ) . '" rel="home">' . "\n";
-				echo '<img class="logo" src="' . esc_url( $logo ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
+		echo '<div class="site-logo" itemscope itemtype="http://schema.org/Brand">' . "\n";
+			echo '<a href="' . esc_url( get_home_url() ) . '" itemprop="url" rel="home">' . "\n";
+				echo '<img itemprop="logo" class="logo" src="' . esc_url( $logo ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
 			echo '</a>' . "\n";
 		echo '</div>' . "\n";
 
 	// If not, then display the Site Title and Site Description.
 	} else {
-		echo '<h1 class="site-title"><a href="' . esc_url( get_home_url() ) . '" rel="home">' . esc_attr( get_bloginfo( 'name' ) ) . '</a></h1>';
-		echo '<h2 class="site-description">' . esc_attr( get_bloginfo( 'description' ) ) . '</h2>';
+		echo '<h1 class="site-title" ' . hybrid_get_attr( 'site-title' ) . '><a href="' . esc_url( get_home_url() ) . '" itemprop="url" rel="home"><span itemprop="headline">' . esc_attr( get_bloginfo( 'name' ) ) . '</span></a></h1>';
+		echo '<h2 class="site-description" ' . hybrid_get_attr( 'site-description' ) . '>' . esc_attr( get_bloginfo( 'description' ) ) . '</h2>';
 	}
 
 }

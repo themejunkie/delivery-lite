@@ -59,7 +59,7 @@ function delivery_theme_setup() {
 	);
 
 	// Add custom stylesheet file to the TinyMCE visual editor.
-	add_editor_style( array( 'assets/css/editor-style.css' ) );
+	add_editor_style( array( 'assets/css/editor-style.css', delivery_open_sans_font_url() ) );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support(
@@ -118,9 +118,9 @@ function delivery_register_sidebars() {
 
 	register_sidebar(
 		array(
-			'name'          => _x( 'Home', 'sidebar', 'delivery' ),
-			'id'            => 'home',
-			'description'   => __( 'Secondary(left) sidebar, it only displayed on home page.', 'delivery' ),
+			'name'          => _x( 'Secondary', 'sidebar', 'delivery' ),
+			'id'            => 'secondary',
+			'description'   => __( 'Secondary(left) sidebar, appears on posts and pages.', 'delivery' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -213,6 +213,7 @@ require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
  */
 require trailingslashit( get_template_directory() ) . 'inc/hybrid/breadcrumb-trail.php';
 require trailingslashit( get_template_directory() ) . 'inc/hybrid/loop-pagination.php';
+require trailingslashit( get_template_directory() ) . 'inc/hybrid/attr.php';
 
 /**
  * Custom categories widget.

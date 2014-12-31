@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main" <?php hybrid_attr( 'content' ); ?>>
 
 		<?php if ( have_posts() ) : ?>
 

@@ -25,7 +25,7 @@ function delivery_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'delivery_settings',
 		array(
-			'title'    => __( 'Delivery Settings', 'delivery' ),
+			'title'    => __( 'Delivery Lite Settings', 'delivery' ),
 			'priority' => 150,
 		)
 	);

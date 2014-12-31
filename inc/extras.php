@@ -37,8 +37,8 @@ function delivery_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	// Adds a custom class if 'Home' sidebar at least has one widget.
-	if ( is_active_sidebar( 'home' ) && is_home() ) {
+	// Adds a custom class if 'Secondary' sidebar at least has one widget.
+	if ( is_active_sidebar( 'secondary' ) ) {
 		$classes[] = 'has-left-sidebar';
 	}
 
