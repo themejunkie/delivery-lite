@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 				options: {
 					domainPath: '/languages/',           // Where to save the POT file.
 					exclude: ['build/.*'],               // Exlude build folder.
-					potFilename: '<%= pkg.name %>.pot',  // Name of the POT file.
+					potFilename: 'delivery.pot',  // Name of the POT file.
 					type: 'wp-theme',                    // Type of project (wp-plugin or wp-theme).
 					updateTimestamp: true,               // Whether the POT-Creation-Date should be updated without other changes.
 					processPot: function( pot, options ) {

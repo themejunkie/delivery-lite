@@ -182,7 +182,6 @@ figure {
 }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -254,8 +253,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -323,6 +320,11 @@ body {
 /**
  * Selection Color.
  */
+::-moz-selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none;
+}
 ::selection {
   background: #000;
   color: #fff;
@@ -791,7 +793,10 @@ select[disabled] optgroup,
 textarea[disabled],
 a.button_disabled {
   box-shadow: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #888;
   cursor: default;
 }
@@ -845,9 +850,7 @@ select[size="1"] {
   }
 
   ::-webkit-validation-bubble-message {
-    -webkit-box-shadow: none;
     box-shadow: none;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(1, black));
     border: 0;
     color: white;
     font: 13px/17px "Lucida Grande", Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -988,49 +991,41 @@ object {
 
 .gallery-columns-2 .gallery-item {
   max-width: 48%;
-  max-width: -webkit-calc(50% - 4px);
   max-width: calc(50% - 4px);
 }
 
 .gallery-columns-3 .gallery-item {
   max-width: 32%;
-  max-width: -webkit-calc(33.3% - 4px);
   max-width: calc(33.3% - 4px);
 }
 
 .gallery-columns-4 .gallery-item {
   max-width: 23%;
-  max-width: -webkit-calc(25% - 4px);
   max-width: calc(25% - 4px);
 }
 
 .gallery-columns-5 .gallery-item {
   max-width: 19%;
-  max-width: -webkit-calc(20% - 4px);
   max-width: calc(20% - 4px);
 }
 
 .gallery-columns-6 .gallery-item {
   max-width: 15%;
-  max-width: -webkit-calc(16.7% - 4px);
   max-width: calc(16.7% - 4px);
 }
 
 .gallery-columns-7 .gallery-item {
   max-width: 13%;
-  max-width: -webkit-calc(14.28% - 4px);
   max-width: calc(14.28% - 4px);
 }
 
 .gallery-columns-8 .gallery-item {
   max-width: 11%;
-  max-width: -webkit-calc(12.5% - 4px);
   max-width: calc(12.5% - 4px);
 }
 
 .gallery-columns-9 .gallery-item {
   max-width: 9%;
-  max-width: -webkit-calc(11.1% - 4px);
   max-width: calc(11.1% - 4px);
 }
 
@@ -2230,8 +2225,6 @@ html.mm-opening #mm-blocker {
 
 html.mm-opened .mm-page,
 .mm-menu > .mm-panel {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
@@ -2468,9 +2461,7 @@ html.mm-blocking #mm-blocker {
   position: absolute;
   bottom: 50%;
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -2506,9 +2497,7 @@ html.mm-blocking #mm-blocker {
 
 .mm-menu.mm-vertical .mm-list > li.mm-opened > a.mm-subopen:after {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 16px;
   right: 16px;
