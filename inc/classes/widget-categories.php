@@ -42,51 +42,13 @@ class Delivery_Categories extends WP_Widget {
 		// Output the theme's $before_widget wrapper.
 		echo $before_widget;
 
-		// If the title not empty, display it.
-		if ( $instance['title'] ) {
-			echo $before_title . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . $after_title;
-		}
-
-		// Display the category list.
-		echo '<ul>';
-			wp_list_categories( array( 'title_li' => '' ) );
-		echo '</ul>';
+			// Display the category list.
+			echo '<ul>';
+				wp_list_categories( array( 'title_li' => '' ) );
+			echo '</ul>';
 
 		// Close the theme's widget wrapper.
 		echo $after_widget;
-
-	}
-
-	/**
-	 * Updates the widget control options for the particular instance of the widget.
-	 *
-	 * @since 1.0.0
-	 */
-	function update( $new_instance, $old_instance ) {
-		$instance = $new_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		return $instance;
-	}
-
-	/**
-	 * Displays the widget control options in the Widgets admin screen.
-	 *
-	 * @since 1.0.0
-	 */
-	function form( $instance ) {
-
-		// Default.
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
-	?>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
-				<?php _e( 'Title:', 'delivery' ); ?>
-			</label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-		</p>
-
-	<?php
 
 	}
 
