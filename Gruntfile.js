@@ -337,7 +337,7 @@ module.exports = function(grunt) {
 
 	// Package task
 	grunt.registerTask('package', [
-		'newer:compress',
+		'compress',
 	]);
 
 };
