@@ -1,3 +1,14 @@
+1.0.3 - 07/9/2015
+* Fixed deprecated widget code
+* Added back to top button
+* Removed favicon customizer setting
+* Remove loop-navigation.php / Use default WordPress pagination
+* Updated TGMPA library
+* Updated all assets
+* Updated schema.org markup
+* Update breadcrumbs
+* Update mobile menu
+
 1.0.2 - 31/12/2014
 * Code re-factored
 * Added secondary widgets

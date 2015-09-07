@@ -1,0 +1,14 @@
+{
+  "name": "delivery-lite",
+  "version": "1.0.3",
+  "dependencies": {
+    "fitvids": "~1.1.0",
+    "flexslider": "~2.5.0",
+    "html5shiv": "~3.7.3",
+    "imagesloaded": "~3.1.8",
+    "scrollup": "~2.4.1",
+    "slicknav": "~1.0.3",
+    "superfish": "~1.7.6",
+    "susy": "~2.2.6"
+  }
+}

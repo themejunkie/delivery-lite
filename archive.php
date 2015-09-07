@@ -3,8 +3,6 @@
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" <?php hybrid_attr( 'content' ); ?>>
 
-		<?php get_template_part( 'menu', 'breadcrumbs' ); // Loads the meneu-breadcrumbs.php template ?>
-
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">

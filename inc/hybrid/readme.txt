@@ -1,1 +1,0 @@
-Every files in this folder are copyrighted by Justin Tadlock - http://themehybrid.com/hybrid-core

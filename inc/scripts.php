@@ -21,14 +21,17 @@ function delivery_enqueue() {
 	// Load google fonts.
 	wp_enqueue_style( 'delivery-font', delivery_open_sans_font_url(), array(), null );
 
+	// Load plugins stylesheet
+	wp_enqueue_style( 'delivery-plugins-style', trailingslashit( get_template_directory_uri() ) . 'assets/css/plugins.min.css' );
+
 	// if WP_DEBUG and/or SCRIPT_DEBUG turned on, load the unminified styles & script.
-	if ( WP_DEBUG || SCRIPT_DEBUG ) {
+	if ( ! is_child_theme() && WP_DEBUG || SCRIPT_DEBUG ) {
 
 		// Load main stylesheet
 		wp_enqueue_style( 'delivery-style', get_stylesheet_uri(), array( 'dashicons' ) );
 
 		// Load custom js plugins.
-		wp_enqueue_script( 'delivery-plugins', trailingslashit( get_template_directory_uri() ) . 'assets/js/plugins.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'delivery-plugins', trailingslashit( get_template_directory_uri() ) . 'assets/js/plugins.min.js', array( 'jquery' ), null, true );
 
 		// Load custom js methods.
 		wp_enqueue_script( 'delivery-main', trailingslashit( get_template_directory_uri() ) . 'assets/js/main.js', array( 'jquery' ), null, true );
@@ -38,14 +41,14 @@ function delivery_enqueue() {
 		// Load main stylesheet
 		wp_enqueue_style( 'delivery-style', trailingslashit( get_template_directory_uri() ) . 'style.min.css', array( 'dashicons' ) );
 
-		// If child theme is active, load the stylesheet.
-		if ( is_child_theme() ) {
-			wp_enqueue_style( 'delivery-child-style', get_stylesheet_uri() );
-		}
-
 		// Load custom js plugins.
-		wp_enqueue_script( 'delivery-scripts', trailingslashit( get_template_directory_uri() ) . 'assets/js/delivery.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'delivery-scripts', trailingslashit( get_template_directory_uri() ) . 'assets/js/delivery-lite.min.js', array( 'jquery' ), null, true );
 
+	}
+
+	// If child theme is active, load the stylesheet.
+	if ( is_child_theme() ) {
+		wp_enqueue_style( 'delivery-child-style', get_stylesheet_uri() );
 	}
 
 	// Load comment-reply script.
@@ -61,14 +64,14 @@ add_action( 'wp_enqueue_scripts', 'delivery_enqueue' );
  * 
  * @since  1.0.0
  */
-function delivery_special_scripts() {
+function delivery_html5_shiv() {
 ?>
 <!--[if lte IE 9]>
-<script src="<?php echo trailingslashit( get_template_directory_uri() ) . 'assets/js/html5shiv.js'; ?>"></script>
+<script src="<?php echo trailingslashit( get_template_directory_uri() ) . 'assets/js/html5shiv.min.js'; ?>"></script>
 <![endif]-->
 <?php
 }
-add_action( 'wp_head', 'delivery_special_scripts', 15 );
+add_action( 'wp_head', 'delivery_html5_shiv', 15 );
 
 /**
  * js / no-js script.

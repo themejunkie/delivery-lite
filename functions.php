@@ -53,8 +53,8 @@ function delivery_theme_setup() {
 	// Register custom navigation menu.
 	register_nav_menus(
 		array(
-			'primary'   => __( 'Primary Menu', 'delivery' ),
-			'secondary' => __( 'Secondary Menu' , 'delivery' ),
+			'primary'   => __( 'Primary Location', 'delivery' ),
+			'secondary' => __( 'Secondary Location' , 'delivery' ),
 		)
 	);
 
@@ -194,11 +194,6 @@ require trailingslashit( get_template_directory() ) . 'inc/template-tags.php';
 require trailingslashit( get_template_directory() ) . 'inc/scripts.php';
 
 /**
- * Require and recommended plugins list.
- */
-require trailingslashit( get_template_directory() ) . 'inc/plugins.php';
-
-/**
  * Custom functions that act independently of the theme templates.
  */
 require trailingslashit( get_template_directory() ) . 'inc/extras.php';
@@ -212,7 +207,6 @@ require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
  * We use some part of Hybrid Core to extends our themes.
  */
 require trailingslashit( get_template_directory() ) . 'inc/hybrid/breadcrumb-trail.php';
-require trailingslashit( get_template_directory() ) . 'inc/hybrid/loop-pagination.php';
 require trailingslashit( get_template_directory() ) . 'inc/hybrid/attr.php';
 
 /**

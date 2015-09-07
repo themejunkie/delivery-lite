@@ -7,7 +7,7 @@
  * microdata while being forward compatible with the ever-changing Web. Currently, the default microdata 
  * vocabulary supported is Schema.org.
  *
- * @package    Delivery Lite
+ * @package    Standard
  * @author     Justin Tadlock <justin@justintadlock.com>
  * @author     Sami Keijonen <sami.keijonen@foxnet.fi>
  * @copyright  Copyright (c) 2008 - 2014, Justin Tadlock
@@ -59,8 +59,8 @@ add_filter( 'hybrid_attr_comment-content',   'hybrid_attr_comment_content',   5 
  * @param  string  $context  A specific context (e.g., 'primary').
  * @return void
  */
-function hybrid_attr( $slug, $context = '' ) {
-	echo hybrid_get_attr( $slug, $context );
+function hybrid_attr( $slug, $context = '', $attr = array()  ) {
+	echo hybrid_get_attr( $slug, $context, $attr );
 }
 
 /**
@@ -75,16 +75,16 @@ function hybrid_attr( $slug, $context = '' ) {
  * @param  string  $context  A specific context (e.g., 'primary').
  * @return string
  */
-function hybrid_get_attr( $slug, $context = '' ) {
+function hybrid_get_attr( $slug, $context = '', $attr = array() ) {
 
 	$out    = '';
-	$attr   = apply_filters( "hybrid_attr_{$slug}", array(), $context );
+	$attr   = wp_parse_args( $attr, apply_filters( "hybrid_attr_{$slug}", array(), $context ) );
 
-	//if ( empty( $attr ) )
-		//$attr['class'] = $slug;
+	if ( empty( $attr ) )
+		$attr['class'] = $slug;
 
 	foreach ( $attr as $name => $value )
-		$out .= !empty( $value ) ? sprintf( ' %s="%s"', esc_html( $name ), esc_attr( $value ) ) : esc_html( " {$name}" );
+		$out .= $value ? sprintf( ' %s="%s"', esc_html( $name ), esc_attr( $value ) ) : esc_html( " {$name}" );
 
 	return trim( $out );
 }
@@ -103,6 +103,14 @@ function hybrid_attr_body( $attr ) {
 
 	$attr['itemscope'] = 'itemscope';
 	$attr['itemtype']  = 'http://schema.org/WebPage';
+
+	if ( is_singular( 'post' ) || is_home() || is_archive() ) {
+		$attr['itemscope'] = '';
+		$attr['itemtype']  = 'http://schema.org/Blog';
+	}
+	if ( is_search() ) {
+		$attr['itemtype']  = 'http://schema.org/SearchResultsPage';
+	}
 
 	return $attr;
 }
@@ -149,16 +157,8 @@ function hybrid_attr_footer( $attr ) {
  */
 function hybrid_attr_content( $attr ) {
 
-	$attr['itemprop'] = 'mainContentOfPage';
-
-	if ( is_singular( 'post' ) || is_home() || is_archive() ) {
-		$attr['itemscope'] = '';
-		$attr['itemtype']  = 'http://schema.org/Blog';
-	}
-
-	elseif ( is_search() ) {
-		$attr['itemscope'] = 'itemscope';
-		$attr['itemtype']  = 'http://schema.org/SearchResultsPage';
+	if ( ! is_singular( 'post' ) && ! is_home() && ! is_archive() ) {
+		$attr['itemprop'] = 'mainContentOfPage';
 	}
 
 	return $attr;
@@ -320,7 +320,11 @@ function hybrid_attr_post( $attr ) {
 		if ( 'post' === get_post_type() ) {
 
 			$attr['itemtype']  = 'http://schema.org/BlogPosting';
-			$attr['itemprop']  = 'blogPost';
+			
+			// Add itemprop if within the main query
+			if ( is_main_query() && ! is_search() ) {
+				$attr['itemprop'] = 'blogPost';
+			}
 		}
 
 		elseif ( 'attachment' === get_post_type() && wp_attachment_is_image() ) {
@@ -469,7 +473,7 @@ function hybrid_attr_comment( $attr ) {
 
 		$attr['itemprop']  = 'comment';
 		$attr['itemscope'] = 'itemscope';
-		$attr['itemtype']  = 'http://schema.org/UserComments';
+		$attr['itemtype']  = 'http://schema.org/Comment';
 	}
 
 	return $attr;
@@ -502,7 +506,7 @@ function hybrid_attr_comment_author( $attr ) {
  */
 function hybrid_attr_comment_published( $attr ) {
 
-	$attr['itemprop'] = 'commentTime';
+	$attr['itemprop'] = 'datePublished';
 
 	return $attr;
 }
@@ -532,7 +536,7 @@ function hybrid_attr_comment_permalink( $attr ) {
  */
 function hybrid_attr_comment_content( $attr ) {
 
-	$attr['itemprop'] = 'commentText';
+	$attr['itemprop'] = 'text';
 
 	return $attr;
 }
@@ -590,22 +594,6 @@ function delivery_entry_markup( $classes ) {
 add_filter( 'post_class', 'delivery_entry_markup' );
 
 /**
- * Adds microdata to the comment reply link.
- *
- * @author  Justin Tadlock, justintadlock.com
- * @link    http://themehybrid.com/hybrid-core
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- *
- * @since  1.0.0
- * @param  string  $link
- * @return string
- */
-function delivery_comment_reply_link_filter( $link ) {
-	return preg_replace( '/(<a\s)/i', '$1itemprop="replyToUrl"', $link );
-}
-add_filter( 'comment_reply_link', 'delivery_comment_reply_link_filter', 5 );
-
-/**
  * Adds microdata to the comments popup link.
  *
  * @author  Justin Tadlock, justintadlock.com
@@ -617,7 +605,7 @@ add_filter( 'comment_reply_link', 'delivery_comment_reply_link_filter', 5 );
  * @return string
  */
 function delivery_comments_popup_link_attributes( $attr ) {
-	return 'itemprop="discussionURL"';
+	return ' itemprop="discussionURL"';
 }
 add_filter( 'comments_popup_link_attributes', 'delivery_comments_popup_link_attributes', 5 );
 
@@ -636,3 +624,16 @@ function delivery_get_avatar( $avatar ) {
 	return preg_replace( '/(<img.*?)(\/>)/i', '$1itemprop="image" $2', $avatar );
 }
 add_filter( 'get_avatar', 'delivery_get_avatar', 5 );
+
+/**
+ * Add custom attribute 'itempro="image"' to the post thumbnail.
+ *
+ * @since  1.0.0
+ * @param  array  $attr
+ * @return array
+ */
+function delivery_img_attr( $attr ) {
+    $attr['itemprop'] = 'image';
+    return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'delivery_img_attr', 10, 2 );

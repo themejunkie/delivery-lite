@@ -94,53 +94,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 endif;
 
 /**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @since  1.0.0
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function delivery_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
-}
-add_action( 'wp', 'delivery_setup_author' );
-
-/**
- * Generates the relevant template info. Adds template meta with theme version. Uses the theme 
- * name and version from style.css.
- *
- * @since 1.0.0
- */
-function delivery_meta_template() {
-	$theme    = wp_get_theme( get_template() );
-	$template = sprintf( '<meta name="template" content="%1$s %2$s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
-
-	echo apply_filters( 'delivery_meta_template', $template );
-}
-add_action( 'wp_head', 'delivery_meta_template', 10 );
-
-/**
- * Removes default styles set by WordPress recent comments widget.
- *
- * @since 1.0.0
- */
-function delivery_remove_recent_comments_style() {
-	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-}
-add_action( 'widgets_init', 'delivery_remove_recent_comments_style' );
-
-/**
  * Control the excerpt length.
  *
  * @since  1.0.0
@@ -164,6 +117,37 @@ add_filter( 'excerpt_length', 'delivery_excerpt_length', 999 );
  * @param  string  $more
  */
 function delivery_excerpt_more( $more ) {
-	return '...';
+	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'delivery_excerpt_more' );
+
+/**
+ * Extend archive title
+ *
+ * @since  1.0.0
+ */
+function delivery_extend_archive_title( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = get_the_author();
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'delivery_extend_archive_title' );
+
+/**
+ * Customize tag cloud widget
+ *
+ * @since  1.0.0
+ */
+function delivery_customize_tag_cloud( $args ) {
+	$args['largest']  = 12;
+	$args['smallest'] = 12;
+	$args['unit']     = 'px';
+	$args['number']   = 20;
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'delivery_customize_tag_cloud' );

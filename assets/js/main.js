@@ -1,12 +1,17 @@
 var $ = jQuery.noConflict();
 $(document).ready(function(){
 
-	/**
-	 * mmenu
-	 */
-	$('#primary-navigation').clone().attr('id', 'primary-menu').insertBefore('#primary-navigation');
-	$('#primary-navigation ul').removeClass('sf-menu');
-	$('#primary-navigation').mmenu();
+	// Mobile menu
+	$('#menu-primary-items').slicknav({
+		prependTo: '#primary-navigation',
+		allowParentLinks: true
+	});
+
+	// Mobile menu
+	$('#menu-secondary-items').slicknav({
+		prependTo: '#secondary-navigation',
+		allowParentLinks: true
+	});
 	
 	/**
 	 * Superfish + Supersubs
@@ -21,11 +26,9 @@ $(document).ready(function(){
 		speed:      'fast'
 	});
 
-	/**
-	 * Turn navigation into mobile navigation
-	 */
-	$("#secondary-navigation .menu-secondary-items").tinyNav({
-		active: 'current-menu-item'
+	// Scroll to top
+	$.scrollUp({
+		scrollText: '<span class="dashicons dashicons-arrow-up-alt2"></span>'
 	});
 
 });

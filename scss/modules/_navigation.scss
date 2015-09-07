@@ -22,10 +22,14 @@ $color-nav: #2aa4cf;
 	box-shadow: rgba($black, .2) 0px 2px 2px -1px;
 	background-color: $accent-1;
 	border-bottom: 1px solid #2693BA;
+	position: relative;
 }
 
 .navigation-item {
 	@extend .container;
+	@include min-screen(769px) {
+		position: relative;
+	}
 }
 
 .menu-primary-items {
@@ -59,20 +63,73 @@ $color-nav: #2aa4cf;
 
 }
 
-.mobile-menu {
-	
-	.dashicons {
-		@include font-size(40);
-		color: $black;
-	}
+/**
+ * Mobile menu
+ */
+.slicknav_menu {
+	display: none;
+}
 
-	@include min-screen(320px) {
-		display: block;
-	}
+@include susy-media(max-width 768px) {
 
-	@include min-screen(601px) {
+	#menu-primary-items,
+	#menu-secondary-items {
 		display: none;
 	}
+	
+	.slicknav_menu {
+		background-color: transparent;
+		display: block;
+		padding: 0;
+		.slicknav_icon-bar {
+			background-color: #fff;
+			box-shadow: none;
+		}
+		.slicknav_icon {
+			font-size: 22px;
+		}
+	}
+
+	.secondary-navigation {
+		.slicknav_menu {
+			.slicknav_icon-bar {
+				background-color: #555;
+			}
+			.slicknav_icon {
+				font-size: 23px;
+			}
+		}
+	}
+
+	.slicknav_menutxt {
+		@extend .screen-reader-text;
+	}
+
+	.slicknav_btn {
+		background-color: transparent;
+		padding: 20px 0 20px 20px;
+		margin: 0;
+		float: left;
+	}
+
+	.slicknav_nav {
+		background-color: #555;
+		margin-top: 60px;
+		padding: 10px 0;
+	}
+
+	.slicknav_nav .slicknav_row, 
+	.slicknav_nav a {
+		padding: 8px 20px;
+		margin: 0;
+		color: #fff;
+		&:hover {
+			background-color: #333;
+			border-radius: 0;
+			color: #fff;
+		}
+	}
+
 }
 
 /**
@@ -164,9 +221,35 @@ $color-nav: #2aa4cf;
  * Breadcrumbs
  */
 .breadcrumbs {
+	border-bottom: 1px solid #eee;
 	@include font-size(12);
-	@include pxrem(margin-bottom, 20px);
+	@include pxrem(margin-bottom, 10px);
+	@include pxrem(padding-bottom, 20px);
 	color: $gray-darker;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+		padding-right: 15px;
+		position: relative;
+		&::before {
+			content: "/";
+			color: #ccc;
+			position: absolute;
+			left: -9px;
+			top: 0;
+		}
+		&.trail-begin {
+			&::before {
+				content: "";
+			}
+		}
+	}
 
 	.sep {
 		@include pxrem(padding, 0 5px);

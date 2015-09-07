@@ -55,6 +55,21 @@
 		float: right;
 	}
 
+	.widget_archive,
+	.widget_categories {
+		@extend %clearfix;
+
+		li {
+			text-align: right;
+			@extend %clearfix;
+		}
+
+		a {
+			float: left;
+		}
+
+	}
+
 }
 
 .widget-area {
@@ -323,4 +338,24 @@
 			border: 0;
 		}
 	}
+}
+
+.widget_tag_cloud {
+
+	a {
+		background-color: $accent-1;
+		border-radius: 3px;
+		color: #fff;
+		padding: 2px 8px;
+		margin-right: 5px;
+		margin-bottom: 8px;
+		display: inline-block;
+		letter-spacing: 1px;
+		line-height: 1.5;
+		text-transform: uppercase;
+		&:hover {
+			opacity: .75;
+		}
+	}
+
 }

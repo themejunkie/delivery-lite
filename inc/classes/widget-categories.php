@@ -24,7 +24,7 @@ class Delivery_Categories extends WP_Widget {
 		);
 
 		// Create the widget.
-		$this->WP_Widget(
+		parent::__construct(
 			'delivery-categories',                          // $this->id_base
 			__( '&rarr; Delivery Categories', 'delivery' ), // $this->name
 			$widget_options                                 // $this->widget_options

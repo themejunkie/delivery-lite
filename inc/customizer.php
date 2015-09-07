@@ -49,25 +49,6 @@ function delivery_customize_register( $wp_customize ) {
 			)
 		) );
 
-	// Favicon setting.
-	$wp_customize->add_setting(
-		'delivery_favicon',
-		array(
-			'sanitize_callback' => 'esc_url',
-			'capability'        => 'edit_theme_options'
-		)
-	);
-
-		// Favicon control.
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control( $wp_customize, 'delivery_favicon_control',
-			array(
-				'label'    => esc_html__( 'Upload Favicon', 'delivery' ),
-				'section'  => 'delivery_settings',
-				'settings' => 'delivery_favicon'
-			)
-		) );
-
 	// Featured Posts setting.
 	$wp_customize->add_setting(
 		'delivery_featured_posts',
@@ -120,15 +101,3 @@ function delivery_customize_preview_js() {
 	wp_enqueue_script( 'delivery_customizer', trailingslashit( get_template_directory_uri() ) . 'assets/js/customizer.js', array( 'customize-preview' ), null, true );
 }
 add_action( 'customize_preview_init', 'delivery_customize_preview_js' );
-
-/**
- * Favicon output.
- *
- * @since 1.0.0
- */
-function delivery_favicon_output() {
-	if ( get_theme_mod( 'delivery_favicon' ) ) {
-		echo '<link href="' . esc_url( get_theme_mod( 'delivery_favicon' ) ) . '" rel="icon">' . "\n";
-	}
-}
-add_action( 'wp_head', 'delivery_favicon_output', 5 );
