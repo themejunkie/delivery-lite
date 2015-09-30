@@ -388,8 +388,7 @@ a:visited {
 	color: #2693ba;
 }
 
-a:hover,
-  a:visited:hover {
+a:hover, a:visited:hover {
 	color: #50b7dc;
 	text-decoration: none;
 }
@@ -687,8 +686,7 @@ textarea:invalid {
 	box-shadow: none;
 }
 
-input[type="file"]:focus,
-input[type="file"]:active,
+input[type="file"]:focus, input[type="file"]:active,
 input[type="radio"]:focus,
 input[type="radio"]:active,
 input[type="checkbox"]:focus,
@@ -1276,8 +1274,7 @@ object {
 	text-transform: uppercase;
 }
 
-.menu-primary-items a:hover,
-    .menu-primary-items a:visited:hover {
+.menu-primary-items a:hover, .menu-primary-items a:visited:hover {
 	color: #fff;
 	background-color: #2aa4cf;
 }
@@ -1392,8 +1389,7 @@ object {
 	text-transform: uppercase;
 }
 
-.menu-secondary-items a:hover,
-    .menu-secondary-items a:visited:hover {
+.menu-secondary-items a:hover, .menu-secondary-items a:visited:hover {
 	color: #666;
 	background: #f0f0f0;
 }
@@ -2493,10 +2489,9 @@ html[xmlns] .slides {
 
 button,
 a.button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"], .menu-secondary-items, #carousel .slides li, .pagination .page-numbers {
+input[type="reset"], .menu-secondary-items, #carousel .slides li, .pagination .page-numbers {
 	background: #fbfbfb;
 	background: linear-gradient(to bottom, #fbfbfb, #eee);
 	text-shadow: 0 -1px 0 #fff;
 }
+
