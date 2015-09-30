@@ -5,10 +5,10 @@
   "homepage": "http://www.theme-junkie.com/",
   "repository": {
     "type": "git",
-    "url": "git@github.com:themejunkie/delivery-lite.git"
+    "url": "git@gitlab.com:themejunkie/delivery-lite.git"
   },
   "bugs": {
-    "url": "https://github.com/themejunkie/delivery-lite/issues"
+    "url": "https://gitlab.com/themejunkie/delivery-lite/issues"
   },
   "licenses": [
     {
