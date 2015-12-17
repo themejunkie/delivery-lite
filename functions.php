@@ -4,7 +4,7 @@
  *
  * Contains all of the Theme's setup functions, custom functions,
  * custom hooks and Theme settings.
- * 
+ *
  * @package    Delivery Lite
  * @author     Theme Junkie
  * @copyright  Copyright (c) 2014, Theme Junkie
@@ -139,7 +139,7 @@ function delivery_register_sidebars() {
 			'after_title'   => '</h1>',
 		)
 	);
-	
+
 }
 endif; // delivery_register_sidebars
 add_action( 'widgets_init', 'delivery_register_sidebars' );
