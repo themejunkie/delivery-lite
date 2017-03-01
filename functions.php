@@ -79,6 +79,9 @@ function delivery_theme_setup() {
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 
+	// Indicate widget sidebars can use selective refresh in the Customizer.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif; // delivery_theme_setup
 add_action( 'after_setup_theme', 'delivery_theme_setup' );
