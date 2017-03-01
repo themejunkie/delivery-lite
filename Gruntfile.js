@@ -298,7 +298,6 @@ module.exports = function( grunt ) {
 	// Production task
 	grunt.registerTask( 'build', [
 		'uglify',
-		'imagemin',
 		'sass',
 		'autoprefixer:main',
 		'csscomb:main',

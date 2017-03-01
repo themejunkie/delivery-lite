@@ -216,3 +216,13 @@ require trailingslashit( get_template_directory() ) . 'inc/hybrid/attr.php';
  * Custom categories widget.
  */
 require trailingslashit( get_template_directory() ) . 'inc/classes/widget-categories.php';
+
+/**
+ * Require and recommended plugins list.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/plugins.php';
+
+/**
+ * Demo importer
+ */
+require trailingslashit( get_template_directory() ) . 'inc/demo/demo-importer.php';
