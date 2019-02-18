@@ -1,3 +1,7 @@
+1.0.6 - Feb 18, 2019
+* Fixed breadcrumb trail issue
+* Support WordPress 5.1
+
 1.0.5 - March 01, 2017
 * Update stylesheets
 	style.css

@@ -1,17 +1,17 @@
-# <!=Copyright (C) 2017 Theme Junkie
+# <!=Copyright (C) 2019 Theme Junkie
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Delivery Lite 1.0.5\n"
+"Project-Id-Version: Delivery Lite 1.0.6\n"
 "Report-Msgid-Bugs-To: http://www.theme-junkie.com/forum/\n"
-"POT-Creation-Date: 2017-03-01 14:16:52+00:00\n"
+"POT-Creation-Date: 2019-02-18 11:47:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theme Junkie (support@theme-junkie.com)\n"
 "Language-Team: Theme Junkie (support@theme-junkie.com)\n"
-"X-Generator: grunt-wp-i18n1.0.0\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Language: English\n"
@@ -514,39 +514,43 @@ msgstr ""
 msgid "Number of featured posts to show."
 msgstr ""
 
-#: inc/extras.php:75 inc/hybrid/breadcrumb-trail.php:252
+#: inc/extras.php:75 inc/hybrid/breadcrumb-trail.php:272
 #. Translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:244
+#: inc/hybrid/breadcrumb-trail.php:264
 msgid "Browse:"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:246
+#: inc/hybrid/breadcrumb-trail.php:266
 msgid "Home"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:247
+#: inc/hybrid/breadcrumb-trail.php:267
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:248
+#: inc/hybrid/breadcrumb-trail.php:268
 msgid "Archives"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:250
-#. Translators: %s is the search query. The HTML entities are opening and
-#. closing curly quotes.
-msgid "Search results for &#8220;%s&#8221;"
+#: inc/hybrid/breadcrumb-trail.php:270
+#. Translators: %s is the search query.
+msgid "Search results for: %s"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:254
+#: inc/hybrid/breadcrumb-trail.php:274
+#. Translators: %s is the page number.
+msgid "Comment Page %s"
+msgstr ""
+
+#: inc/hybrid/breadcrumb-trail.php:276
 #. Translators: Minute archive title. %s is the minute time format.
 msgid "Minute %s"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:256
+#: inc/hybrid/breadcrumb-trail.php:278
 #. Translators: Weekly archive title. %s is the week date format.
 msgid "Week %s"
 msgstr ""
@@ -671,45 +675,45 @@ msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:245
+#: inc/hybrid/breadcrumb-trail.php:265
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:708
+#: inc/hybrid/breadcrumb-trail.php:738
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:725
+#: inc/hybrid/breadcrumb-trail.php:755
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:742
+#: inc/hybrid/breadcrumb-trail.php:772
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:758 inc/hybrid/breadcrumb-trail.php:787
-#: inc/hybrid/breadcrumb-trail.php:814 inc/hybrid/breadcrumb-trail.php:841
-#: inc/hybrid/breadcrumb-trail.php:1176
+#: inc/hybrid/breadcrumb-trail.php:788 inc/hybrid/breadcrumb-trail.php:817
+#: inc/hybrid/breadcrumb-trail.php:844 inc/hybrid/breadcrumb-trail.php:871
+#: inc/hybrid/breadcrumb-trail.php:1211
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:759 inc/hybrid/breadcrumb-trail.php:815
-#: inc/hybrid/breadcrumb-trail.php:1180
+#: inc/hybrid/breadcrumb-trail.php:789 inc/hybrid/breadcrumb-trail.php:845
+#: inc/hybrid/breadcrumb-trail.php:1215
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:760 inc/hybrid/breadcrumb-trail.php:1184
+#: inc/hybrid/breadcrumb-trail.php:790 inc/hybrid/breadcrumb-trail.php:1219
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/hybrid/breadcrumb-trail.php:788
+#: inc/hybrid/breadcrumb-trail.php:818
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
