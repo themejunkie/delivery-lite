@@ -24,7 +24,7 @@ function delivery_get_posted_on() {
 		esc_html( get_the_date() )
 	);
 
-	$meta = sprintf( __( '<span class="posted-on">%1$s</span><span class="byline"> &#8211; by %2$s</span>', 'delivery' ),
+	$meta = sprintf( __( '<span class="posted-on">%1$s</span><span class="byline"> &#8211; by %2$s</span>', 'delivery-lite' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string

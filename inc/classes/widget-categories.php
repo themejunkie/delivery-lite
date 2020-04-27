@@ -20,13 +20,13 @@ class Delivery_Categories extends WP_Widget {
 		// Set up the widget options.
 		$widget_options = array(
 			'classname'   => 'delivery-categories',
-			'description' => __( 'Display category list in a custom view.', 'delivery' )
+			'description' => __( 'Display category list in a custom view.', 'delivery-lite' )
 		);
 
 		// Create the widget.
 		parent::__construct(
 			'delivery-categories',                          // $this->id_base
-			__( '&rarr; Delivery Categories', 'delivery' ), // $this->name
+			__( '&rarr; Delivery Categories', 'delivery-lite' ), // $this->name
 			$widget_options                                 // $this->widget_options
 		);
 	}

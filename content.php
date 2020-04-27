@@ -11,7 +11,7 @@
 			<?php endif; ?>
 
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="comments-link"><?php comments_popup_link( __( '0', 'delivery' ), __( '1', 'delivery' ), __( '%', 'delivery' ) ); ?> <div class="dashicons dashicons-admin-comments"></div></span>
+				<span class="comments-link"><?php comments_popup_link( __( '0', 'delivery-lite' ), __( '1', 'delivery-lite' ), __( '%', 'delivery-lite' ) ); ?> <div class="dashicons dashicons-admin-comments"></div></span>
 			<?php endif; ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->

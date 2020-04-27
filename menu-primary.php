@@ -3,7 +3,7 @@
 	<nav id="primary-navigation" class="main-navigation" role="navigation" <?php hybrid_attr( 'menu' ); ?>>
 		<div class="navigation-item">
 
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'delivery' ); ?></a>
+			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'delivery-lite' ); ?></a>
 			<?php wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',

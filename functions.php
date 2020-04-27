@@ -28,7 +28,7 @@ if ( ! function_exists( 'delivery_theme_setup' ) ) :
 function delivery_theme_setup() {
 
 	// Make the theme available for translation.
-	load_theme_textdomain( 'delivery', trailingslashit( get_template_directory() ) . 'languages' );
+	load_theme_textdomain( 'delivery-lite', trailingslashit( get_template_directory() ) . 'languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -53,8 +53,8 @@ function delivery_theme_setup() {
 	// Register custom navigation menu.
 	register_nav_menus(
 		array(
-			'primary'   => __( 'Primary Location', 'delivery' ),
-			'secondary' => __( 'Secondary Location' , 'delivery' ),
+			'primary'   => __( 'Primary Location', 'delivery-lite' ),
+			'secondary' => __( 'Secondary Location' , 'delivery-lite' ),
 		)
 	);
 
@@ -62,13 +62,9 @@ function delivery_theme_setup() {
 	add_editor_style( array( 'assets/css/editor-style.css', delivery_open_sans_font_url() ) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters( 'delivery_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) )
-	);
+	add_theme_support( 'custom-background', apply_filters( 'delivery_custom_background_args', array(
+		'default-color' => 'ffffff'
+	) ) );
 
 	// Enable support for HTML5 markup.
 	add_theme_support(
@@ -97,9 +93,9 @@ function delivery_register_sidebars() {
 
 	register_sidebar(
 		array(
-			'name'          => _x( 'Header', 'sidebar', 'delivery' ),
+			'name'          => _x( 'Header', 'sidebar', 'delivery-lite' ),
 			'id'            => 'header',
-			'description'   => __( 'An optional widget area for your site header.', 'delivery' ),
+			'description'   => __( 'An optional widget area for your site header.', 'delivery-lite' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -109,9 +105,9 @@ function delivery_register_sidebars() {
 
 	register_sidebar(
 		array(
-			'name'          => _x( 'Primary', 'sidebar', 'delivery' ),
+			'name'          => _x( 'Primary', 'sidebar', 'delivery-lite' ),
 			'id'            => 'primary',
-			'description'   => __( 'The main sidebar, appears on posts and pages.', 'delivery' ),
+			'description'   => __( 'The main sidebar, appears on posts and pages.', 'delivery-lite' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -121,9 +117,9 @@ function delivery_register_sidebars() {
 
 	register_sidebar(
 		array(
-			'name'          => _x( 'Secondary', 'sidebar', 'delivery' ),
+			'name'          => _x( 'Secondary', 'sidebar', 'delivery-lite' ),
 			'id'            => 'secondary',
-			'description'   => __( 'Secondary(left) sidebar, appears on posts and pages.', 'delivery' ),
+			'description'   => __( 'Secondary(left) sidebar, appears on posts and pages.', 'delivery-lite' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -133,9 +129,9 @@ function delivery_register_sidebars() {
 
 	register_sidebar(
 		array(
-			'name'          => _x( 'Footer', 'sidebar', 'delivery' ),
+			'name'          => _x( 'Footer', 'sidebar', 'delivery-lite' ),
 			'id'            => 'footer',
-			'description'   => __( 'The footer sidebar, appears on the footer of your site.', 'delivery' ),
+			'description'   => __( 'The footer sidebar, appears on the footer of your site.', 'delivery-lite' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -159,13 +155,13 @@ function delivery_open_sans_font_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'delivery' ) ) {
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'delivery-lite' ) ) {
 		$subsets = 'latin,latin-ext';
 
 		/* translators: To add an additional Open Sans character subset specific to your language,
 		 * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
 		 */
-		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'delivery' );
+		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'delivery-lite' );
 
 		if ( 'cyrillic' == $subset ) {
 			$subsets .= ',cyrillic,cyrillic-ext';
@@ -222,7 +218,5 @@ require trailingslashit( get_template_directory() ) . 'inc/classes/widget-catego
  */
 require trailingslashit( get_template_directory() ) . 'inc/plugins.php';
 
-/**
- * Demo importer
- */
-require trailingslashit( get_template_directory() ) . 'inc/demo/demo-importer.php';
+// MailOptin integration
+require get_template_directory() . '/inc/classes/class-mailoptin.php';

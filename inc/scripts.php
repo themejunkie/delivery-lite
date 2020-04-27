@@ -56,31 +56,8 @@ function delivery_enqueue() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// js / no-js script.
+	wp_add_inline_script( 'faithpress-main-js', "document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');" );
+
 }
 add_action( 'wp_enqueue_scripts', 'delivery_enqueue' );
-
-/**
- * Loads HTML5 Shiv & Respond js file.
- * 
- * @since  1.0.0
- */
-function delivery_html5_shiv() {
-?>
-<!--[if lte IE 9]>
-<script src="<?php echo trailingslashit( get_template_directory_uri() ) . 'assets/js/html5shiv.min.js'; ?>"></script>
-<![endif]-->
-<?php
-}
-add_action( 'wp_head', 'delivery_html5_shiv', 15 );
-
-/**
- * js / no-js script.
- *
- * @since  1.0.0
- */
-function delivery_no_js_script() {
-?>
-<script>document.documentElement.className = 'js';</script>
-<?php
-}
-add_action( 'wp_footer', 'delivery_no_js_script' );

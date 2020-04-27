@@ -25,7 +25,7 @@ function delivery_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'delivery_settings',
 		array(
-			'title'    => __( 'Delivery Lite Settings', 'delivery' ),
+			'title'    => __( 'Delivery Lite Settings', 'delivery-lite' ),
 			'priority' => 150,
 		)
 	);
@@ -43,7 +43,7 @@ function delivery_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control( $wp_customize, 'delivery_logo_control',
 			array(
-				'label'    => esc_html__( 'Upload Logo', 'delivery' ),
+				'label'    => esc_html__( 'Upload Logo', 'delivery-lite' ),
 				'section'  => 'delivery_settings',
 				'settings' => 'delivery_logo'
 			)
@@ -63,7 +63,7 @@ function delivery_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'delivery_featured_posts_control',
 			array(
-				'label'    => esc_html__( 'Tag slug for featured post', 'delivery' ),
+				'label'    => esc_html__( 'Tag slug for featured post', 'delivery-lite' ),
 				'section'  => 'delivery_settings',
 				'settings' => 'delivery_featured_posts'
 			)
@@ -83,7 +83,7 @@ function delivery_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'delivery_featured_posts_num_control',
 			array(
-				'label'    => esc_html__( 'Number of featured posts to show.', 'delivery' ),
+				'label'    => esc_html__( 'Number of featured posts to show.', 'delivery-lite' ),
 				'section'  => 'delivery_settings',
 				'settings' => 'delivery_featured_posts_num'
 			)

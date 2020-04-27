@@ -6,17 +6,17 @@
 			<section class="error-404 not-found">
 
 				<header class="page-header">
-					<h2 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'delivery' ); ?></h1>
+					<h2 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'delivery-lite' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'delivery' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'delivery-lite' ); ?></p>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<?php if ( delivery_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 						<div class="widget widget_categories">
-							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'delivery' ); ?></h2>
+							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'delivery-lite' ); ?></h2>
 							<ul>
 								<?php
 									wp_list_categories( array(
@@ -33,7 +33,7 @@
 
 					<?php
 						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'delivery' ), convert_smilies( ':)' ) ) . '</p>';
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'delivery-lite' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 

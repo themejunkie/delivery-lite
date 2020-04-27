@@ -6,8 +6,8 @@
 			<?php get_sidebar( 'footer' ); // Loads the sidebar-footer.php template. ?>
 
 			<div class="site-info">
-				<a class="powered" href="<?php echo esc_url( __( 'http://wordpress.org/', 'delivery' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'delivery' ), 'WordPress' ); ?></a>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'delivery' ), 'Delivery Lite', '<a href="http://www.theme-junkie.com/" rel="designer">Theme Junkie</a>' ); ?>
+				<a class="powered" href="<?php echo esc_url( __( 'http://wordpress.org/', 'delivery-lite' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'delivery-lite' ), 'WordPress' ); ?></a>
+				<?php printf( __( 'Theme: %1$s by %2$s.', 'delivery-lite' ), 'Delivery Lite', '<a href="http://www.theme-junkie.com/" rel="designer">Theme Junkie</a>' ); ?>
 			</div><!-- .site-info -->
 
 		</div><!-- .footer-item -->

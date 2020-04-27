@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2019 Theme Junkie
+# <!=Copyright (C) 2020 Theme Junkie
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Delivery Lite 1.0.6\n"
+"Project-Id-Version: Delivery Lite 1.0.7\n"
 "Report-Msgid-Bugs-To: http://www.theme-junkie.com/forum/\n"
-"POT-Creation-Date: 2019-02-18 11:47:11+00:00\n"
+"POT-Creation-Date: 2020-04-27 18:44:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theme Junkie (support@theme-junkie.com)\n"
 "Language-Team: Theme Junkie (support@theme-junkie.com)\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -50,19 +50,19 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:26 comments.php:46
+#: comments.php:42 comments.php:62
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:27 comments.php:47
+#: comments.php:43 comments.php:63
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:28 comments.php:48
+#: comments.php:44 comments.php:64
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:74
 msgid "Comments are closed."
 msgstr ""
 
@@ -131,20 +131,39 @@ msgstr ""
 msgid "Secondary Location"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:98
 msgid "An optional widget area for your site header."
 msgstr ""
 
-#: functions.php:114
+#: functions.php:110
 msgid "The main sidebar, appears on posts and pages."
 msgstr ""
 
-#: functions.php:126
+#: functions.php:122
 msgid "Secondary(left) sidebar, appears on posts and pages."
 msgstr ""
 
-#: functions.php:138
+#: functions.php:134
 msgid "The footer sidebar, appears on the footer of your site."
+msgstr ""
+
+#: inc/classes/class-mailoptin.php:62
+msgid ""
+"Free optin form plugin that will %1$sincrease your email list "
+"subscribers%2$s and keep them engaged with %1$sautomated and schedule "
+"newsletters%2$s."
+msgstr ""
+
+#: inc/classes/class-mailoptin.php:71
+msgid "Install MailOptin Now for Free!"
+msgstr ""
+
+#: inc/classes/class-mailoptin.php:76
+msgid "Activate MailOptin Now!"
+msgstr ""
+
+#: inc/classes/class-mailoptin.php:85 inc/classes/tgmpa.php:395
+msgid "Dismiss this notice"
 msgstr ""
 
 #: inc/classes/tgmpa.php:327
@@ -220,10 +239,6 @@ msgstr ""
 #: inc/classes/tgmpa.php:394
 #. translators: 1: dashboard link.
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: inc/classes/tgmpa.php:395
-msgid "Dismiss this notice"
 msgstr ""
 
 #: inc/classes/tgmpa.php:396
@@ -514,11 +529,6 @@ msgstr ""
 msgid "Number of featured posts to show."
 msgstr ""
 
-#: inc/extras.php:75 inc/hybrid/breadcrumb-trail.php:272
-#. Translators: %s is the page number.
-msgid "Page %s"
-msgstr ""
-
 #: inc/hybrid/breadcrumb-trail.php:264
 msgid "Browse:"
 msgstr ""
@@ -538,6 +548,11 @@ msgstr ""
 #: inc/hybrid/breadcrumb-trail.php:270
 #. Translators: %s is the search query.
 msgid "Search results for: %s"
+msgstr ""
+
+#: inc/hybrid/breadcrumb-trail.php:272
+#. Translators: %s is the page number.
+msgid "Page %s"
 msgstr ""
 
 #: inc/hybrid/breadcrumb-trail.php:274
@@ -608,34 +623,41 @@ msgstr ""
 msgid "http://www.theme-junkie.com/"
 msgstr ""
 
-#: comments.php:19
+#: comments.php:22
+#. translators: %s: post title
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One Comment to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:26
+#. translators: 1: number of comments, 2: post title
+msgctxt "comments title"
+msgid "%1$s Comment to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:100
+#: functions.php:96
 msgctxt "sidebar"
 msgid "Header"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:108
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:120
 msgctxt "sidebar"
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:132
 msgctxt "sidebar"
 msgid "Footer"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:158
 #. translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
@@ -643,7 +665,7 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:164
 #. translators: To add an additional Open Sans character subset specific to
 #. your language, translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not
 #. translate into your own language.

@@ -1,6 +1,6 @@
 {
   "name": "delivery-lite",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "dependencies": {
     "fitvids": "~1.2.0",
     "flexslider": "~2.7.1",
